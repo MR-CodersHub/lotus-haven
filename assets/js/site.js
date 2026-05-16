@@ -39,6 +39,56 @@ document.addEventListener('DOMContentLoaded', () => {
     setDirection(nextDirection);
   });
 
+  const profileToggle = document.querySelector('[data-action="profile-menu-toggle"]');
+  const profileMenu = document.querySelector('[data-profile-menu]');
+
+  profileToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    profileMenu?.classList.toggle('hidden');
+    mobileMenu?.classList.add('hidden'); // Close mobile menu if profile is opened
+  });
+
+  const mobileToggle = document.querySelector('[data-action="mobile-menu-toggle"]');
+  const mobileMenu = document.querySelector('[data-mobile-menu]');
+
+  mobileToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mobileMenu?.classList.toggle('hidden');
+    profileMenu?.classList.add('hidden'); // Close profile menu if mobile menu is opened
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!profileToggle?.contains(e.target) && !profileMenu?.contains(e.target)) {
+      profileMenu?.classList.add('hidden');
+    }
+    if (!mobileToggle?.contains(e.target) && !mobileMenu?.contains(e.target)) {
+      mobileMenu?.classList.add('hidden');
+    }
+  });
+
+  // Active Nav Links logic
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href) {
+      try {
+        const linkPath = new URL(href, window.location.href).pathname;
+        const currentPathname = window.location.pathname;
+        
+        // Handle cases like / and /index.html
+        const normalize = (p) => p.endsWith('/') ? p + 'index.html' : p;
+        
+        if (normalize(linkPath) === normalize(currentPathname)) {
+          link.classList.add('active');
+        }
+      } catch (e) {
+        console.error('Error parsing nav link:', e);
+      }
+    }
+  });
+
   function updateBlogCards() {
     const query = blogSearch?.value.toLowerCase().trim() || '';
     const category = blogFilter?.value || 'all';

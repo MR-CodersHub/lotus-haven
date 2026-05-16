@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Story • Lotus Haven</title>
+     <link rel="icon" type="image/png" href="../assets/images/brand-logo.png">
     <meta name="description" content="Learn about our journey, mission, and the dedicated team behind Lotus Haven." />
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
@@ -11,9 +12,7 @@
     <div class="min-h-screen">
       <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-[var(--surface)]/95 backdrop-blur-xl">
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 md:px-8">
-          <a href="../" class="text-logo text-sm font-semibold uppercase tracking-[0.3em] text-primary-700 dark:text-primary-200 flex items-center">
-            <img src="../assets/images/brand-logo.png" alt="brand-logo" class="w-12 h-12 mr-3"> Lotus Haven
-          </a>
+          <a href="../" class="text-logo text-sm font-semibold uppercase tracking-[0.3em] text-primary-700 dark:text-primary-200 flex items-center"><img src="../assets/images/brand-logo.png" alt="brand-logo" class="w-12 h-12 mr-8"> Lotus Haven</a>
           <nav class="hidden items-center gap-8 text-sm font-medium md:flex">
             <a href="../" class="nav-link">Home</a>
             <a href="home.html" class="nav-link">Home 2</a>
@@ -23,9 +22,54 @@
             <a href="contact.html" class="nav-link">Contact</a>
           </nav>
           <div class="flex items-center gap-3">
-            <button type="button" data-action="toggle-theme" class="btn-secondary !px-4 !py-2">Theme</button>
-            <a href="contact.html" class="btn-primary !px-6 !py-2 text-xs uppercase tracking-widest">Book a Visit</a>
+            <button type="button" data-action="toggle-rtl" class="btn-secondary hidden md:inline-flex">RTL</button>
+            <button type="button" data-action="toggle-theme" class="btn-secondary">Mode</button>
+            
+            <div class="relative">
+              <button type="button" data-action="profile-menu-toggle" class="hidden md:inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 shadow-soft transition hover:border-primary-500 hover:bg-primary-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" aria-label="Profile menu">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div data-profile-menu class="absolute right-0 z-50 mt-3 hidden min-w-[220px] overflow-hidden rounded-3xl border border-slate-200 bg-[var(--surface)] text-left shadow-soft dark:border-slate-700 dark:bg-slate-900">
+                <a href="login.html" class="block px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Login / Signup</a>
+                <a href="admin-dashboard.html" class="block px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Admin dashboard</a>
+                <a href="dashboard.html" class="block px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">User dashboard</a>
+              </div>
+            </div>
+
+            <button type="button" data-action="mobile-menu-toggle" class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 shadow-soft transition hover:border-primary-500 hover:bg-primary-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" aria-label="Toggle menu">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
           </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div data-mobile-menu class="absolute left-6 right-6 top-full z-50 mt-4 hidden overflow-hidden rounded-3xl border border-slate-200 bg-[var(--surface)] p-6 shadow-xl dark:border-slate-800 dark:bg-slate-900 md:hidden">
+          <nav class="flex flex-col gap-4">
+            <a href="../" class="nav-link">Home</a>
+            <a href="home.html" class="nav-link">Home 2</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <hr class="border-slate-100 dark:border-slate-800 my-2">
+            <a href="login.html" class="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-primary-600 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" /></svg>
+              Login / Signup
+            </a>
+            <a href="admin-dashboard.html" class="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-primary-600 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+              Admin Dashboard
+            </a>
+            <a href="dashboard.html" class="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-primary-600 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+              User Dashboard
+            </a>
+          </nav>
         </div>
       </header>
 
@@ -42,7 +86,7 @@
               <p class="section-copy mt-8">Lotus Haven exists to make yoga and meditation approachable for every student. We combine thoughtful studio classes with a wellness dashboard so members can book sessions, manage memberships, and access class recordings with ease.</p>
             </div>
             <div class="relative">
-              <img src="https://images.unsplash.com/photo-1545208393-596371ba9629?auto=format&fit=crop&w=1200&q=80" alt="Studio Atmosphere" class="rounded-[60px] shadow-2xl" />
+              <img src="https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?auto=format&fit=crop&w=1200&q=80" alt="Studio Atmosphere" class="rounded-[60px] shadow-2xl" />
               <div class="absolute -top-10 -right-10 h-64 w-64 rounded-full bg-primary-light opacity-30 blur-3xl -z-10"></div>
             </div>
           </div>
@@ -163,54 +207,77 @@
         </section>
       </main>
 
-      <footer class="mt-24 border-t border-slate-200/80 bg-[var(--surface)] pt-16 pb-8 text-slate-600 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-300">
-        <div class="mx-auto max-w-7xl px-6 md:px-8">
-          <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-            <div class="space-y-6">
-              <a href="../" class="text-logo text-sm font-semibold uppercase tracking-[0.3em] text-primary-700 dark:text-primary-200 flex items-center">
-                <img src="../assets/images/brand-logo.png" alt="brand-logo" class="w-12 h-12 mr-3"> Lotus Haven
+    <footer class="mt-24 border-t border-slate-200/80 bg-[var(--surface)] pt-16 pb-8 text-slate-600 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-300">
+      <div class="mx-auto max-w-7xl px-6 md:px-8">
+
+        <!-- Footer Grid -->
+        <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          <!-- Brand -->
+          <div class="space-y-6">
+            <a href="../" class="text-logo text-sm font-semibold uppercase tracking-[0.3em] text-primary-700 dark:text-primary-200 flex items-center"><img src="../assets/images/brand-logo.png" alt="brand-logo" class="w-12 h-12 mr-8">Lotus Haven</a>
+            <p class="text-sm leading-7">Cultivating calm through mindful yoga and meditation. Our studio is a sanctuary for modern wellness seekers in the heart of Harmony City.</p>
+            <div class="flex gap-4">
+              <!-- Social Icons -->
+              <a href="#" class="group flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 hover:border-primary-500 hover:bg-primary-50 dark:border-slate-700 dark:hover:bg-slate-800 transition-all" aria-label="Facebook">
+                <svg class="h-5 w-5 text-slate-400 group-hover:text-primary-600" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
               </a>
-              <p class="text-sm leading-7">Cultivating calm through mindful yoga and meditation. Our studio is a sanctuary for modern wellness seekers in the heart of Harmony City.</p>
-              <div class="flex gap-4">
-                <a href="#" class="group flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 hover:border-primary-500 hover:bg-primary-50 dark:border-slate-700 dark:hover:bg-slate-800 transition-all" aria-label="Facebook">FB</a>
-                <a href="#" class="group flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 hover:border-primary-500 hover:bg-primary-50 dark:border-slate-700 dark:hover:bg-slate-800 transition-all" aria-label="Instagram">IG</a>
-              </div>
-            </div>
-            <div class="lg:ml-auto">
-              <h3 class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900 dark:text-white">Explore</h3>
-              <ul class="mt-6 space-y-4 text-sm">
-                <li><a href="../" class="hover:text-primary-600 transition-colors">Home</a></li>
-                <li><a href="about.html" class="hover:text-primary-600 transition-colors">Philosophy</a></li>
-                <li><a href="services.html" class="hover:text-primary-600 transition-colors">Classes</a></li>
-                <li><a href="blog.html" class="hover:text-primary-600 transition-colors">Blog</a></li>
-              </ul>
-            </div>
-            <div class="lg:ml-auto">
-              <h3 class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900 dark:text-white">Studio</h3>
-              <ul class="mt-6 space-y-4 text-sm">
-                <li><a href="contact.html" class="hover:text-primary-600 transition-colors">Location</a></li>
-                <li><a href="dashboard.html" class="hover:text-primary-600 transition-colors">Portal</a></li>
-                <li><a href="faq.html" class="hover:text-primary-600 transition-colors">FAQ</a></li>
-              </ul>
-            </div>
-            <div class="lg:ml-auto">
-              <h3 class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900 dark:text-white">Connect</h3>
-              <div class="mt-6 space-y-4 text-sm">
-                <p>123 Lotus Lane, Harmony City</p>
-                <p>(555) 012-3456</p>
-                <p>hello@lotushaven.com</p>
-              </div>
+              <!-- Instagram -->
+              <a href="#" class="group flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 hover:border-primary-500 hover:bg-primary-50 dark:border-slate-700 dark:hover:bg-slate-800 transition-all" aria-label="Instagram">
+                <svg class="h-5 w-5 text-slate-400 group-hover:text-primary-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <!-- Twitter -->
+              <a href="#" class="group flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 hover:border-primary-500 hover:bg-primary-50 dark:border-slate-700 dark:hover:bg-slate-800 transition-all" aria-label="Twitter">
+                <svg class="h-5 w-5 text-slate-400 group-hover:text-primary-600" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+              </a>
             </div>
           </div>
-          <div class="mt-20 flex flex-col items-center justify-between gap-6 border-t border-slate-200/60 pt-8 dark:border-slate-800/60 sm:flex-row">
-            <p class="text-sm text-slate-500">© 2026 Lotus Haven Studio. All rights reserved.</p>
-            <div class="flex gap-8 text-sm">
-              <a href="policy.html" class="text-slate-500 hover:text-primary-600 transition-colors">Privacy</a>
-              <a href="terms.html" class="text-slate-500 hover:text-primary-600 transition-colors">Terms</a>
+
+          <!-- Quick Links -->
+          <div class="lg:ml-auto">
+            <h3 class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900 dark:text-white">Explore</h3>
+            <ul class="mt-6 space-y-4 text-sm">
+              <li><a href="../" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Home Experience</a></li>
+              <li><a href="home2.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Home Niche</a></li>
+              <li><a href="about.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Our Philosophy</a></li>
+              <li><a href="services.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Class Services</a></li>
+              <li><a href="blog.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Mindfulness Blog</a></li>
+              
+            </ul>
+          </div>
+
+          <!-- Studio -->
+          <div class="lg:ml-auto">
+            <h3 class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900 dark:text-white">Studio</h3>
+            <ul class="mt-6 space-y-4 text-sm">
+              <li><a href="contact.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Find a Studio</a></li>
+              <li><a href="faq.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Common Questions</a></li>
+              <li><a href="pricing.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Private Booking</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="lg:ml-auto">
+            <h3 class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900 dark:text-white">Connect</h3>
+            <div class="mt-6 space-y-4 text-sm">
+              <p class="flex items-center gap-3">123 Lotus Lane, Harmony City</p>
+              <p class="flex items-center gap-3">(555) 012-3456</p>
+              <p class="flex items-center gap-3">hello@lotushaven.com</p>
             </div>
           </div>
         </div>
-      </footer>
+
+        <!-- Bottom Bar -->
+        <div class="mt-20 flex flex-col items-center justify-between gap-6 border-t border-slate-200/60 pt-8 dark:border-slate-800/60 sm:flex-row">
+          <p class="text-sm text-slate-500">© 2026 Lotus Haven Studio. All rights reserved.</p>
+          <div class="flex gap-8 text-sm">
+            <a href="policy.html" class="text-slate-500 hover:text-primary-600 transition-colors">Privacy</a>
+            <a href="terms.html" class="text-slate-500 hover:text-primary-600 transition-colors">Terms</a>
+            <a href="maintenance.html" class="text-slate-500 hover:text-primary-600 transition-colors">Status</a>
+          </div>
+          <p class="text-sm font-medium text-slate-400">Designed for mindful growth.</p>
+        </div>
+      </div>
+    </footer>
     </div>
     <script src="../assets/js/site.js"></script>
   </body>
