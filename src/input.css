@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+  --bg: #f7f5f2;
+  --surface: #ffffff;
+  --muted: #64748b;
+  --text: #1f2937;
+  --border: #e5e7eb;
+  --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  --primary: #5d8a67;
+  --primary-contrast: #ffffff;
+  --accent: #f5692e;
+  --accent-soft: #fff2ea;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0f172a;
+  --surface: #111827;
+  --muted: #94a3b8;
+  --text: #e2e8f0;
+  --border: #1f2937;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --primary: #8aa79e;
+  --primary-contrast: #0f172a;
+  --accent: #fbbf24;
+  --accent-soft: #3f3f46;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply antialiased min-h-screen bg-[var(--bg)] text-[var(--text)];
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  a {
+    color: inherit;
+  }
+  .rtl {
+    direction: rtl;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-soft transition duration-300 ease-in-out hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-200;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition duration-300 ease-in-out hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800;
+  }
+  .card {
+    @apply rounded-[32px] border border-[var(--border)] bg-[var(--surface)] p-8 shadow-soft transition-transform duration-300 ease-in-out hover:-translate-y-1;
+  }
+  .section-title {
+    @apply mb-6 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-4xl;
+  }
+  .section-copy {
+    @apply max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300;
+  }
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  .footer-link {
+    @apply text-slate-500 transition-colors duration-300 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400;
+  }
+}
+
+@layer utilities {
+  .text-logo {
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+}
