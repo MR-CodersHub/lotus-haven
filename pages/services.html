@@ -87,11 +87,11 @@
         <!-- Category / Filter Section -->
         <section class="mx-auto max-w-7xl px-6 pb-12 md:px-8">
           <div class="flex flex-wrap justify-center gap-4">
-            <button class="px-8 py-3 rounded-full bg-primary-600 text-white font-medium shadow-lg shadow-primary-500/20 transition-all hover:-translate-y-0.5">All Practices</button>
-            <button class="px-8 py-3 rounded-full bg-white border border-slate-200 text-slate-600 font-medium transition-all hover:bg-slate-50 hover:border-primary-500 hover:text-primary-600">Yoga Flow</button>
-            <button class="px-8 py-3 rounded-full bg-white border border-slate-200 text-slate-600 font-medium transition-all hover:bg-slate-50 hover:border-primary-500 hover:text-primary-600">Meditation</button>
-            <button class="px-8 py-3 rounded-full bg-white border border-slate-200 text-slate-600 font-medium transition-all hover:bg-slate-50 hover:border-primary-500 hover:text-primary-600">Private Care</button>
-            <button class="px-8 py-3 rounded-full bg-white border border-slate-200 text-slate-600 font-medium transition-all hover:bg-slate-50 hover:border-primary-500 hover:text-primary-600">Workshops</button>
+            <button data-action="services-filter" data-filter="all" class="px-8 py-3 rounded-full bg-primary-600 text-white font-medium shadow-lg shadow-primary-500/20 transition-all hover:-translate-y-0.5">All Practices</button>
+            <button data-action="services-filter" data-filter="yoga" class="px-8 py-3 rounded-full bg-white border border-slate-200 text-slate-600 font-medium transition-all hover:bg-slate-50 hover:border-primary-500 hover:text-primary-600">Yoga Flow</button>
+            <button data-action="services-filter" data-filter="meditation" class="px-8 py-3 rounded-full bg-white border border-slate-200 text-slate-600 font-medium transition-all hover:bg-slate-50 hover:border-primary-500 hover:text-primary-600">Meditation</button>
+            <button data-action="services-filter" data-filter="private" class="px-8 py-3 rounded-full bg-white border border-slate-200 text-slate-600 font-medium transition-all hover:bg-slate-50 hover:border-primary-500 hover:text-primary-600">Private Care</button>
+            <button data-action="services-filter" data-filter="workshops" class="px-8 py-3 rounded-full bg-white border border-slate-200 text-slate-600 font-medium transition-all hover:bg-slate-50 hover:border-primary-500 hover:text-primary-600">Workshops</button>
           </div>
         </section>
 
@@ -99,7 +99,7 @@
         <section class="mx-auto max-w-7xl px-6 py-20 md:px-8">
           <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             <!-- Service 1 -->
-            <article class="card group flex flex-col h-full">
+            <article data-category="yoga" class="card group flex flex-col h-full">
               <div class="relative h-64 w-full overflow-hidden rounded-[30px] mb-8">
                 <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=1200&q=80" alt="Vinyasa Flow" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div class="absolute top-6 right-6">
@@ -115,7 +115,7 @@
             </article>
 
             <!-- Service 2 -->
-            <article class="card group flex flex-col h-full">
+            <article data-category="meditation" class="card group flex flex-col h-full">
               <div class="relative h-64 w-full overflow-hidden rounded-[30px] mb-8">
                 <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Breathwork" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div class="absolute top-6 right-6">
@@ -131,7 +131,7 @@
             </article>
 
             <!-- Service 3 -->
-            <article class="card group flex flex-col h-full">
+            <article data-category="yoga" class="card group flex flex-col h-full">
               <div class="relative h-64 w-full overflow-hidden rounded-[30px] mb-8">
                 <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=80" alt="Restorative" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div class="absolute top-6 right-6">
@@ -147,7 +147,7 @@
             </article>
 
             <!-- Service 4 -->
-            <article class="card group flex flex-col h-full">
+            <article data-category="private" class="card group flex flex-col h-full">
               <div class="relative h-64 w-full overflow-hidden rounded-[30px] mb-8">
                 <img src="https://images.unsplash.com/photo-1528319725582-ddc096101511?auto=format&fit=crop&w=800&q=80" alt="Private Coaching" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div class="absolute top-6 right-6">
@@ -163,7 +163,7 @@
             </article>
 
             <!-- Service 5 -->
-            <article class="card group flex flex-col h-full">
+            <article data-category="workshops" class="card group flex flex-col h-full">
               <div class="relative h-64 w-full overflow-hidden rounded-[30px] mb-8">
                 <img src="https://images.unsplash.com/photo-1524863479829-916d8e77f114?auto=format&fit=crop&w=1200&q=80" alt="Workshops" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div class="absolute top-6 right-6">
@@ -179,7 +179,7 @@
             </article>
 
             <!-- Service 6 -->
-            <article class="card group flex flex-col h-full">
+            <article data-category="digital" class="card group flex flex-col h-full">
               <div class="relative h-64 w-full overflow-hidden rounded-[30px] mb-8">
                 <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=800&q=80" alt="Digital" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div class="absolute top-6 right-6">

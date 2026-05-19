@@ -103,4 +103,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
   blogSearch?.addEventListener('input', updateBlogCards);
   blogFilter?.addEventListener('change', updateBlogCards);
+
+  // Services filter functionality
+  const serviceFilterButtons = document.querySelectorAll('[data-action="services-filter"]');
+  const serviceCards = document.querySelectorAll('article[data-category]');
+
+  function setActiveFilterButton(activeBtn) {
+    serviceFilterButtons.forEach(btn => {
+      if (btn === activeBtn) {
+        btn.classList.remove('bg-white','border','border-slate-200','text-slate-600');
+        btn.classList.add('bg-primary-600','text-white','shadow-lg','shadow-primary-500/20');
+      } else {
+        btn.classList.add('bg-white','border','border-slate-200','text-slate-600');
+        btn.classList.remove('bg-primary-600','text-white','shadow-lg','shadow-primary-500/20');
+      }
+    });
+  }
+
+  function filterServices(category) {
+    serviceCards.forEach(card => {
+      const cat = card.dataset.category;
+      if (category === 'all' || cat === category) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+
+  serviceFilterButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const filter = btn.dataset.filter || 'all';
+      setActiveFilterButton(btn);
+      filterServices(filter);
+    });
+  });
 });
