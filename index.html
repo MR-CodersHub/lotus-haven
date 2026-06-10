@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lotus Haven â€¢ Yoga & Meditation Studio</title>
+    <title>Lotus Haven Yoga & Meditation Studio</title>
     <meta name="description" content="Serene yoga and meditation classes, student wellness dashboard, and membership management for modern wellness seekers." />
     <link rel="icon" type="image/png" href="./assets/images/brand-logo.png">
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -12,8 +12,8 @@
     <div class="min-h-screen">
       <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-[var(--surface)]/95 backdrop-blur-xl">
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 md:px-8">
-          <a href="./" class="text-logo text-sm font-semibold uppercase tracking-[0.3em] text-primary-700 dark:text-primary-200 flex items-center"><img src="./assets/images/brand-logo.png" alt="brand-logo" class="w-12 h-12 mr-8"> Lotus Haven</a>
-          <nav class="hidden items-center gap-8 text-sm font-medium md:flex">
+          <a href="./" class="text-logo text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary-700 dark:text-primary-200 flex items-center whitespace-nowrap"><img src="./assets/images/brand-logo.png" alt="brand-logo" class="w-8 h-8 sm:w-10 sm:h-10 mr-2 sm:mr-3 shrink-0"> Lotus Haven</a>
+          <nav class="hidden items-center gap-4 lg:gap-4 lg:gap-8 text-sm font-medium md:flex">
             <a href="./" class="nav-link">Home</a>
             <a href="./pages/home.html" class="nav-link">Home 2</a>
             <a href="./pages/about.html" class="nav-link">About</a>
@@ -22,17 +22,17 @@
             <a href="./pages/contact.html" class="nav-link">Contact</a>
           </nav>
           <div class="flex items-center gap-3">
-            <button type="button" data-action="toggle-rtl" class="btn-secondary hidden md:inline-flex">RTL</button>
-            <button type="button" data-action="toggle-theme" class="btn-secondary">Mode</button>
+            <button type="button" data-action="toggle-rtl" class="btn-secondary !py-2.5 !px-3 sm:!px-4 !text-xs inline-flex h-11 items-center">RTL</button>
+            <button type="button" data-action="toggle-theme" class="btn-secondary !p-0 h-11 w-11 rounded-full hidden md:flex items-center justify-center transition-transform hover:rotate-12" aria-label="Toggle theme"><svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg><svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg></button>
             
             <div class="relative">
-              <button type="button" data-action="profile-menu-toggle" class="hidden md:inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 shadow-soft transition hover:border-primary-500 hover:bg-primary-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" aria-label="Profile menu">
+              <button type="button" data-action="profile-menu-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 shadow-soft transition hover:border-primary-500 hover:bg-primary-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" aria-label="Profile menu">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </button>
-              <div data-profile-menu class="absolute right-0 z-50 mt-3 hidden min-w-[220px] overflow-hidden rounded-3xl border border-slate-200 bg-[var(--surface)] text-left shadow-soft dark:border-slate-700 dark:bg-slate-900">
+              <div data-profile-menu class="absolute right-0 z-50 mt-3 hidden min-w-[220px] overflow-hidden rounded-3xl border border-slate-200 bg-[var(--surface)] text-start shadow-soft dark:border-slate-700 dark:bg-slate-900">
                 <a href="./pages/login.html" class="block px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Login / Signup</a>
                 <a href="./pages/admin-dashboard.html" class="block px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Admin dashboard</a>
                 <a href="./pages/dashboard.html" class="block px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">User dashboard</a>
@@ -57,6 +57,14 @@
             <a href="./pages/blog.html" class="nav-link">Blog</a>
             <a href="./pages/contact.html" class="nav-link">Contact</a>
             <hr class="border-slate-100 dark:border-slate-800 my-2">
+            <!-- Theme Toggle in Mobile Menu -->
+            <button type="button" data-action="toggle-theme" class="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-primary-600 transition-colors w-full text-start py-2" aria-label="Toggle theme">
+              <span class="w-5 h-5 flex items-center justify-center">
+                <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+              </span>
+              <span>Toggle Mode</span>
+            </button>
             <a href="./pages/login.html" class="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-primary-600 transition-colors">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" /></svg>
               Login / Signup
@@ -73,195 +81,430 @@
         </div>
       </header>
 
-      <main class="relative overflow-hidden">
-        <!-- Background Mesh -->
-        <div class="absolute inset-0 bg-mesh opacity-40 -z-10"></div>
-
-        <!-- Hero Section -->
-        <section class="mx-auto max-w-7xl px-6 pt-16 pb-24 md:px-8 lg:pt-24 lg:pb-16">
-          <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
-            <div class="space-y-10">
-              <div class="inline-flex items-center gap-3 rounded-full bg-primary-light px-6 py-2 text-sm font-medium text-primary-700 dark:bg-primary-light/10 dark:text-primary-dark">
-                <span class="flex h-2 w-2 rounded-full bg-primary-600 animate-pulse"></span>
-                Join our summer wellness retreat
+            <main class="relative overflow-hidden bg-[var(--bg)] text-[var(--text)]">
+        
+        <!-- 1. Immersive Hero Section -->
+        <section class="relative min-h-[90vh] flex items-center bg-[var(--bg)] py-20 lg:py-32">
+          <!-- Subtle decorative background elements using existing colors -->
+          <div class="absolute inset-0 bg-mesh opacity-30 dark:opacity-10 pointer-events-none"></div>
+          
+          <div class="relative z-10 mx-auto max-w-7xl px-6 md:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+              
+              <!-- Left Column: Content -->
+              <div class="lg:col-span-6 space-y-8 text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/20 border border-primary-500/10 text-primary-700 dark:text-primary-300">
+                  <span class="w-2 h-2 rounded-full bg-primary-600 animate-pulse"></span>
+                  <span class="text-xs font-bold uppercase tracking-[0.2em]">Sanctuary for the Soul</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-light leading-[1.1] tracking-tight text-slate-900 dark:text-white">
+                  Find stillness.<br>
+                  <span class="font-normal text-primary-600 dark:text-primary-400">Cultivate strength.</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 font-light leading-relaxed max-w-xl">
+                  An immersive space dedicated to the art of movement, the rhythm of breath, and the power of presence. Step off the grid and back into yourself.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                  <a href="./pages/register.html" class="btn-primary">Become a Member</a>
+                  <a href="#pillars" class="btn-secondary">Explore the Practice</a>
+                </div>
+                
+                <!-- Trust & Stats Bar -->
+                <div class="pt-8 border-t border-[var(--border)] flex flex-wrap gap-x-12 gap-y-6">
+                  <div>
+                    <p class="text-3xl font-light text-slate-900 dark:text-white">12k+</p>
+                    <p class="text-xs uppercase tracking-widest text-slate-400 dark:text-slate-500 mt-1">Active Yogis</p>
+                  </div>
+                  <div>
+                    <p class="text-3xl font-light text-slate-900 dark:text-white">15+</p>
+                    <p class="text-xs uppercase tracking-widest text-slate-400 dark:text-slate-500 mt-1">Master Guides</p>
+                  </div>
+                  <div>
+                    <p class="text-3xl font-light text-slate-900 dark:text-white">100%</p>
+                    <p class="text-xs uppercase tracking-widest text-slate-400 dark:text-slate-500 mt-1">Mindful Space</p>
+                  </div>
+                </div>
               </div>
-              <div class="space-y-8">
-                <p class="text-logo text-xs font-semibold tracking-[0.5em] text-primary-600">Sanctuary for the Soul</p>
-                <h1 class="section-title">Yoga, meditation, and wellness care in one <span class="italic text-primary-600">serene</span> studio.</h1>
-                <p class="section-copy">Explore mindful classes, streamlined membership tools, and a calming dashboard designed to help students book sessions, track progress, and stay centered.</p>
+              
+              <!-- Right Column: Asymmetric Image Collage -->
+              <div class="lg:col-span-6 relative mt-8 lg:mt-0">
+                <div class="relative w-full aspect-[4/5] max-w-md md:max-w-lg mx-auto">
+                  <!-- Decorative circle in background -->
+                  <div class="absolute -top-10 -right-10 w-72 h-72 rounded-full border border-primary-500/20 dark:border-primary-500/10 pointer-events-none -z-10 animate-pulse"></div>
+                  
+                  <!-- Main Image -->
+                  <div class="w-full h-full rounded-[3rem] overflow-hidden shadow-lg border border-[var(--border)]">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1000&q=80" 
+                         alt="Serene Yoga Studio Practice" 
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2000ms]" />
+                  </div>
+                  
+                  <!-- Secondary Floating Image -->
+                  <div class="absolute -bottom-10 -left-10 w-1/2 aspect-square rounded-[2rem] overflow-hidden border-4 border-[var(--surface)] shadow-2xl hidden sm:block">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" 
+                         alt="Meditation close-up" 
+                         class="w-full h-full object-cover" />
+                  </div>
+                </div>
               </div>
-              <div class="flex flex-col gap-5 sm:flex-row py-12">
-                <a href="./pages/contact.html" class="btn-primary">Book a free consultation</a>
-                <a href="./pages/dashboard.html" class="btn-secondary">View wellness dashboard</a>
-              </div>
+              
             </div>
+          </div>
+        </section>
 
+        <!-- 2. Core Pillars -->
+        <section id="pillars" class="py-24 md:py-32 border-t border-[var(--border)] bg-slate-50/50 dark:bg-slate-900/10">
+          <div class="mx-auto max-w-7xl px-6 md:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+              <p class="text-xs font-bold uppercase tracking-[0.3em] text-primary-500">The Core Disciplines</p>
+              <h2 class="text-4xl md:text-6xl font-light">Pillars of Lotus Haven</h2>
+              <p class="text-lg text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+                We organize our teachings around three distinct paths to physical vitality and mental stillness.
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+              
+              <!-- Pillar 1: Movement -->
+              <div class="card space-y-6 flex flex-col justify-between group">
+                <div class="space-y-6">
+                  <div class="w-12 h-12 rounded-2xl bg-primary-100 dark:bg-primary-900/20 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                    <!-- Custom SVG representing movement/flow -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-light text-slate-900 dark:text-white">Fluid Movement</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+                    Alignment-based Vinyasa and Hatha practices designed to build deep physical heat, strength, stability, and freedom of motion.
+                  </p>
+                </div>
+                <div class="pt-6 border-t border-slate-100 dark:border-slate-800">
+                  <a href="./pages/services.html" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-600 hover:text-primary-700 transition-colors">
+                    Explore Flows <span class="text-sm">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Pillar 2: Breath -->
+              <div class="card space-y-6 flex flex-col justify-between group">
+                <div class="space-y-6">
+                  <div class="w-12 h-12 rounded-2xl bg-accent-soft flex items-center justify-center text-accent-600">
+                    <!-- Custom SVG representing breath/wind -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-light text-slate-900 dark:text-white">Conscious Breath</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+                    Dedicated Pranayama breathwork patterns to regulate life-force energy, settle the nervous system, and restore inner harmony.
+                  </p>
+                </div>
+                <div class="pt-6 border-t border-slate-100 dark:border-slate-800">
+                  <a href="./pages/services.html" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-accent-600 hover:text-accent-700 transition-colors">
+                    Explore Breathwork <span class="text-sm">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Pillar 3: Stillness -->
+              <div class="card space-y-6 flex flex-col justify-between group">
+                <div class="space-y-6">
+                  <div class="w-12 h-12 rounded-2xl bg-primary-100 dark:bg-primary-900/20 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                    <!-- Custom SVG representing stillness/moon -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-light text-slate-900 dark:text-white">Deep Stillness</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+                    Guided meditation, quiet Yin practices, and healing sound bath journeys to quiet external noise and cultivate quiet awareness.
+                  </p>
+                </div>
+                <div class="pt-6 border-t border-slate-100 dark:border-slate-800">
+                  <a href="./pages/services.html" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-600 hover:text-primary-700 transition-colors">
+                    Explore Meditation <span class="text-sm">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. The Philosophy (Magazine Split Layout) -->
+        <section class="py-24 md:py-36 px-6 md:px-8 max-w-7xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-16 md:gap-24 items-center">
+            
+            <!-- Left Column: Creative Image Overlap -->
             <div class="relative">
-              <div class="absolute -top-10 -right-10 h-64 w-64 rounded-full bg-accent-soft opacity-50 blur-3xl -z-10"></div>
-              <div class="glass-card relative overflow-hidden !p-2">
-                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80" alt="Meditation Practice" class="h-[500px] w-full rounded-[38px] object-cover" />
-                <div class="absolute bottom-10 left-10 right-10">
-                  <div class="glass-card !p-6 !rounded-3xl flex items-center justify-between">
-                    <div>
-                      <p class="text-xs uppercase tracking-widest text-slate-500 mb-1">Current Class</p>
-                      <h3 class="text-xl font-semibold">Morning Vinyasa</h3>
-                    </div>
-                    <span class="rounded-full bg-primary-600 px-4 py-1 text-xs font-bold text-white uppercase tracking-tighter">Live</span>
+              <div class="relative rounded-[2.5rem] overflow-hidden shadow-soft border border-[var(--border)] max-w-md mx-auto lg:max-w-none">
+                <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&w=1000&q=80" 
+                     alt="Meditation Zen Practice" 
+                     class="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-[2000ms]" />
+              </div>
+              <!-- Floating graphic circle decoration -->
+              <div class="absolute -bottom-8 -right-8 w-48 h-48 rounded-full border border-primary-500/20 dark:border-primary-800 pointer-events-none -z-10"></div>
+            </div>
+            
+            <!-- Right Column: Content -->
+            <div class="space-y-8">
+              <p class="text-xs font-bold uppercase tracking-[0.3em] text-primary-500">The Sanctuary Advantage</p>
+              <h2 class="text-3xl md:text-5xl font-light leading-tight text-slate-900 dark:text-white">True wellness transcends the physical.</h2>
+              <p class="text-lg text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+                Lotus Haven is consciously architected as a complete digital and sensory sanctuary. We create space for you to strip away the constant external chatter and drop into a deep, restorative state of grounding.
+              </p>
+              
+              <!-- Value Props List -->
+              <div class="space-y-4 pt-4">
+                <div class="flex items-start gap-4">
+                  <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-base font-semibold text-slate-900 dark:text-white">Tactile Organic Props</h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 font-light mt-0.5">We provide bespoke, organic cotton blocks, natural cork mats, and customized bolsters.</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start gap-4">
+                  <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-base font-semibold text-slate-900 dark:text-white">Acoustic Sound Dampening</h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 font-light mt-0.5">Studio rooms feature sound insulation to block out Harmony City's urban hum.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-base font-semibold text-slate-900 dark:text-white">Botanical Aromatherapy</h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 font-light mt-0.5">Custom therapeutic essential oil diffusions shift mood towards restorative peace.</p>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- About / Intro Block -->
-        <section class="bg-white/50 dark:bg-slate-900/50 py-32 backdrop-blur-sm border-y border-[var(--border)]">
-          <div class="mx-auto max-w-7xl px-6 md:px-8">
-            <div class="grid gap-16 lg:grid-cols-[0.8fr_1.2fr] items-center">
-              <div>
-                <p class="text-logo text-xs font-semibold text-primary-600 mb-6">Our Philosophy</p>
-                <h2 class="section-title">A modern path to <span class="text-primary-600">ancient</span> wisdom.</h2>
-              </div>
-              <div class="space-y-6">
-                <p class="text-xl leading-relaxed text-slate-600 dark:text-slate-300 font-light italic">
-                  "At Lotus Haven, we believe mindfulness is not just a practice, but a way of living. Our studio is designed to be your sanctuary from the digital noise."
-                </p>
-                <p class="section-copy">
-                  We combine traditional yoga techniques with modern wellness technology. From first-time students to experienced practitioners, our programs support mobility, focus, and long-term well-being.
-                </p>
+              
+              <div class="pt-8">
+                <a href="./pages/about.html" class="inline-flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-primary-600 hover:text-primary-700 transition-colors group">
+                  Our Complete Philosophy 
+                  <span class="w-8 h-[1px] bg-primary-600 group-hover:w-12 transition-all"></span>
+                </a>
               </div>
             </div>
+            
           </div>
         </section>
 
-        <!-- Services Overview -->
-        <section class="mx-auto max-w-7xl px-6 py-32 md:px-8">
-          <div class="text-center mb-20 space-y-4">
-            <p class="text-logo text-xs font-semibold text-primary-600">Our Offerings</p>
-            <h2 class="section-title">Designed for every level</h2>
-            <p class="section-copy mx-auto">Discover a range of practices tailored to your personal journey toward balance and health.</p>
-          </div>
-          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <article class="card group">
-              <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-light text-primary-600 group-hover:scale-110 transition-transform">
-                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
+        <!-- 4. Curated Experiences (The Practice - Asymmetric Grid) -->
+        <section class="py-24 md:py-32 bg-primary-50/30 dark:bg-slate-900/20 border-y border-[var(--border)]">
+          <div class="max-w-7xl mx-auto px-6 md:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+              <div class="space-y-4">
+                <p class="text-xs font-bold uppercase tracking-[0.3em] text-primary-500">The Offerings</p>
+                <h2 class="text-4xl md:text-6xl font-light">Curated Practices</h2>
               </div>
-              <h3 class="text-2xl font-semibold mb-4">Vinyasa Flow</h3>
-              <p class="text-slate-600 dark:text-slate-400 font-light leading-relaxed">Dynamic movement synchronized with breath to build strength, flexibility, and focus.</p>
-            </article>
-            <article class="card group">
-              <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-accent-soft text-accent-700 group-hover:scale-110 transition-transform">
-                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-              </div>
-              <h3 class="text-2xl font-semibold mb-4">Deep Meditation</h3>
-              <p class="text-slate-600 dark:text-slate-400 font-light leading-relaxed">Guided sessions to cultivate mental clarity and emotional resilience in a serene space.</p>
-            </article>
-            <article class="card group">
-              <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-light text-primary-600 group-hover:scale-110 transition-transform">
-                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              </div>
-              <h3 class="text-2xl font-semibold mb-4">Sound Healing</h3>
-              <p class="text-slate-600 dark:text-slate-400 font-light leading-relaxed">Immersive acoustic experiences designed to reduce stress and promote deep relaxation.</p>
-            </article>
-          </div>
-        </section>
+              <p class="max-w-md text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+                Choose the discipline that matches your target physical pace and state of mental focus today.
+              </p>
+            </div>
 
-        <!-- Why Choose Us -->
-        <section class="bg-primary-dark py-32 overflow-hidden relative">
-          <div class="absolute top-0 right-0 h-full w-1/2 bg-white/5 skew-x-12 translate-x-32"></div>
-          <div class="mx-auto max-w-7xl px-6 md:px-8">
-            <div class="grid gap-16 lg:grid-cols-2 items-center">
-              <div class="space-y-12">
-                <div>
-                  <p class="text-logo text-xs font-semibold text-primary-200 mb-6">The Haven Advantage</p>
-                  <h2 class="text-4xl font-semibold md:text-6xl leading-[1.1]">Why our students stay centered.</h2>
+            <div class="grid md:grid-cols-12 gap-y-20 md:gap-x-12">
+              
+              <!-- Card 1 (Vinyasa/Flow) -->
+              <div class="md:col-span-7 group">
+                <div class="overflow-hidden rounded-[2rem] border border-[var(--border)] mb-8 shadow-soft">
+                  <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80" 
+                       alt="Vinyasa Flow Class" 
+                       class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-1000" />
                 </div>
-                <div class="grid gap-8">
-                  <div class="flex gap-6">
-                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10 backdrop-blur-md">
-                      <span class="font-bold text-primary-200">01</span>
-                    </div>
-                    <div>
-                      <h4 class="text-xl font-semibold mb-2">Expert Instruction</h4>
-                      <p class=" font-light">Guidance from world-class practitioners with decades of combined experience.</p>
-                    </div>
+                <div class="flex flex-col md:flex-row gap-6 md:justify-between md:items-start">
+                  <div>
+                    <p class="text-xs font-bold tracking-[0.2em] text-primary-500 uppercase mb-3">Practice 01</p>
+                    <h3 class="text-3xl font-light text-slate-900 dark:text-white">Active Vinyasa Flow</h3>
                   </div>
-                  <div class="flex gap-6">
-                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10 backdrop-blur-md">
-                      <span class="font-bold text-primary-200">02</span>
-                    </div>
-                    <div>
-                      <h4 class="text-xl font-semibold mb-2">Digital-First Support</h4>
-                      <p class=" font-light">Manage your journey through our intuitive wellness dashboard on any device.</p>
-                    </div>
-                  </div>
-                  <div class="flex gap-6">
-                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10 backdrop-blur-md">
-                      <span class="font-bold text-primary-200">03</span>
-                    </div>
-                    <div>
-                      <h4 class="text-xl font-semibold mb-2">Serene Environment</h4>
-                      <p class=" font-light">Custom-designed spaces that evoke immediate calm from the moment you enter.</p>
-                    </div>
+                  <div class="max-w-sm">
+                    <p class="text-slate-500 dark:text-slate-400 font-light mb-6">A structured, dynamic flow synchronizing breath with movement to build heat, endurance, and focused core power.</p>
+                    <a href="./pages/services.html" class="text-xs font-bold uppercase tracking-widest border-b border-slate-900 dark:border-white pb-1 hover:text-primary-600 hover:border-primary-600 transition-colors">Discover Schedule</a>
                   </div>
                 </div>
               </div>
-              <div class="relative">
-                <img src="https://images.unsplash.com/photo-1510894347713-fc3ad6cb0322?auto=format&fit=crop&w=1200&q=80" alt="Yoga Studio" class="rounded-[60px] shadow-2xl" />
-                <div class="absolute -bottom-10 -left-10 glass-card !p-8 !rounded-[40px] ">
-                  <p class="text-5xl font-bold mb-2">98%</p>
-                  <p class="text-sm font-medium uppercase tracking-widest text-slate-500">Student Satisfaction</p>
+
+              <!-- Card 2 (Meditation/Stillness) -->
+              <div class="md:col-span-4 md:col-start-9 group mt-12 md:mt-32">
+                <div class="overflow-hidden rounded-[2rem] border border-[var(--border)] mb-8 shadow-soft">
+                  <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=80" 
+                       alt="Stillness Meditation Room" 
+                       class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-1000" />
+                </div>
+                <div class="space-y-4">
+                  <p class="text-xs font-bold tracking-[0.2em] text-primary-500 uppercase">Practice 02</p>
+                  <h3 class="text-3xl font-light text-slate-900 dark:text-white">Yin & Guided Meditation</h3>
+                  <p class="text-slate-500 dark:text-slate-400 font-light mb-6">Restorative floor postures held for long intervals to ease joints and connective tissues, followed by custom Zen guided meditation.</p>
+                  <a href="./pages/services.html" class="text-xs font-bold uppercase tracking-widest border-b border-slate-900 dark:border-white pb-1 hover:text-primary-600 hover:border-primary-600 transition-colors">Discover Schedule</a>
                 </div>
               </div>
+              
             </div>
           </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="mx-auto max-w-7xl px-6 py-32 md:px-8">
-          <div class="text-center mb-20 space-y-4">
-            <p class="text-logo text-xs font-semibold text-primary-600">Kind Words</p>
-            <h2 class="section-title">From our community</h2>
+        <!-- 5. Guided by Masters (Instructor Profiles) -->
+        <section class="py-24 md:py-36 max-w-7xl mx-auto px-6 md:px-8">
+          <div class="text-center mb-24 max-w-3xl mx-auto space-y-4">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-primary-500">Certified Guides</p>
+            <h2 class="text-4xl md:text-6xl font-light">Guided by Masters</h2>
+            <p class="text-lg text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+              Our guides are long-time practitioners with decades of combined training, dedicated to sharing wellness with deep respect for lineage and breath.
+            </p>
           </div>
-          <div class="grid gap-8 md:grid-cols-2">
-            <div class="glass-card flex flex-col justify-between">
-              <p class="text-xl leading-relaxed text-slate-700 italic mb-8">"Lotus Haven transformed my relationship with stress. The instructors are incredibly intuitive and the studio itself is a dream."</p>
-              <div class="flex items-center gap-4">
-                <div class="h-14 w-14 rounded-full bg-slate-200 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" alt="User" class="h-full w-full object-cover" />
-                </div>
-                <div>
-                  <p class="font-bold">Elena Vance</p>
-                  <p class="text-xs text-slate-500 uppercase tracking-widest">Vinyasa Member</p>
-                </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-12">
+            
+            <!-- Guide 1 -->
+            <div class="group flex flex-col items-center text-center">
+              <div class="w-full aspect-[3/4] rounded-[2.5rem] overflow-hidden border border-[var(--border)] mb-8 shadow-soft">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" 
+                     alt="Sarah Jenkins - Lead Vinyasa Instructor" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
+              <h4 class="text-2xl font-light text-slate-900 dark:text-white mb-2">Sarah Jenkins</h4>
+              <p class="text-xs tracking-widest text-primary-600 dark:text-primary-400 uppercase font-bold mb-4">Lead Vinyasa Practitioner</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400 font-light max-w-xs leading-relaxed">
+                Guiding dynamic flow and alignment work for over 12 years. Specializes in anatomical alignment and breath cycles.
+              </p>
             </div>
-            <div class="glass-card flex flex-col justify-between">
-              <p class="text-xl leading-relaxed text-slate-700 italic mb-8">"The dashboard makes it so easy to book sessions around my busy work schedule. I've never been more consistent with my practice."</p>
-              <div class="flex items-center gap-4">
-                <div class="h-14 w-14 rounded-full bg-slate-200 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="User" class="h-full w-full object-cover" />
+            
+            <!-- Guide 2 (David Chen - Clean Serene Male Portrait) -->
+            <div class="group flex flex-col items-center text-center md:mt-12">
+              <div class="w-full aspect-[3/4] rounded-[2.5rem] overflow-hidden border border-[var(--border)] mb-8 shadow-soft">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" 
+                     alt="David Chen - Meditation Teacher" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <h4 class="text-2xl font-light text-slate-900 dark:text-white mb-2">David Chen</h4>
+              <p class="text-xs tracking-widest text-primary-600 dark:text-primary-400 uppercase font-bold mb-4">Mindfulness & Meditation Coach</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400 font-light max-w-xs leading-relaxed">
+                Trained in Zen monasteries. Integrates sound healing and restorative breath patterns into mindfulness sessions.
+              </p>
+            </div>
+
+            <!-- Guide 3 -->
+            <div class="group flex flex-col items-center text-center">
+              <div class="w-full aspect-[3/4] rounded-[2.5rem] overflow-hidden border border-[var(--border)] mb-8 shadow-soft">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" 
+                     alt="Maya Patel - Restorative Instructor" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <h4 class="text-2xl font-light text-slate-900 dark:text-white mb-2">Maya Patel</h4>
+              <p class="text-xs tracking-widest text-primary-600 dark:text-primary-400 uppercase font-bold mb-4">Restorative & Yin Expert</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400 font-light max-w-xs leading-relaxed">
+                Focused on somatic release and calming active minds. Blends deep myofascial release work with slow, somatic holding.
+              </p>
+            </div>
+            
+          </div>
+        </section>
+
+        <!-- 6. The Rhythm (Interactive Class Schedule) -->
+        <section class="py-24 md:py-32 bg-slate-50/50 dark:bg-slate-900/10 border-y border-[var(--border)]">
+          <div class="max-w-4xl mx-auto px-6 md:px-8">
+            <div class="mb-20 text-center space-y-4">
+              <p class="text-xs font-bold uppercase tracking-[0.3em] text-primary-500">Studio Schedule</p>
+              <h2 class="text-4xl md:text-5xl font-light">The Rhythm of Lotus Haven</h2>
+              <p class="text-slate-500 dark:text-slate-400 font-light">Find a restorative practice time that aligns with your weekly routine.</p>
+            </div>
+
+            <div class="divide-y divide-slate-200/60 dark:divide-slate-800/80 border-y border-slate-200/60 dark:border-slate-800/80">
+              
+              <!-- Session 1 -->
+              <div class="py-8 flex flex-col md:flex-row md:items-center justify-between gap-6 group hover:bg-primary-50/30 dark:hover:bg-slate-900/30 px-4 rounded-2xl transition-all duration-300">
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-12">
+                  <p class="text-sm font-semibold tracking-widest uppercase text-slate-400 dark:text-slate-500 w-28"><span class="inline-block" dir="ltr">07:00 AM</span></p>
+                  <h4 class="text-xl font-light text-slate-900 dark:text-white">Sunrise Vinyasa Flow</h4>
                 </div>
-                <div>
-                  <p class="font-bold">Marcus Thorne</p>
-                  <p class="text-xs text-slate-500 uppercase tracking-widest">Morning Flow regular</p>
+                <div class="flex items-center justify-between md:justify-end gap-12">
+                  <p class="text-sm text-slate-600 dark:text-slate-300 font-medium w-32 md:text-right">Sarah Jenkins</p>
+                  <a href="./pages/booking.html" class="inline-flex items-center justify-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-full text-xs font-bold uppercase tracking-wider shadow-sm transition-all">Book Class</a>
                 </div>
               </div>
+
+              <!-- Session 2 -->
+              <div class="py-8 flex flex-col md:flex-row md:items-center justify-between gap-6 group hover:bg-primary-50/30 dark:hover:bg-slate-900/30 px-4 rounded-2xl transition-all duration-300">
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-12">
+                  <p class="text-sm font-semibold tracking-widest uppercase text-slate-400 dark:text-slate-500 w-28"><span class="inline-block" dir="ltr">09:30 AM</span></p>
+                  <h4 class="text-xl font-light text-slate-900 dark:text-white">Morning Sound Meditation</h4>
+                </div>
+                <div class="flex items-center justify-between md:justify-end gap-12">
+                  <p class="text-sm text-slate-600 dark:text-slate-300 font-medium w-32 md:text-right">David Chen</p>
+                  <a href="./pages/booking.html" class="inline-flex items-center justify-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-full text-xs font-bold uppercase tracking-wider shadow-sm transition-all">Book Class</a>
+                </div>
+              </div>
+
+              <!-- Session 3 -->
+              <div class="py-8 flex flex-col md:flex-row md:items-center justify-between gap-6 group hover:bg-primary-50/30 dark:hover:bg-slate-900/30 px-4 rounded-2xl transition-all duration-300">
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-12">
+                  <p class="text-sm font-semibold tracking-widest uppercase text-slate-400 dark:text-slate-500 w-28"><span class="inline-block" dir="ltr">12:00 PM</span></p>
+                  <h4 class="text-xl font-light text-slate-900 dark:text-white">Express Power Asana</h4>
+                </div>
+                <div class="flex items-center justify-between md:justify-end gap-12">
+                  <p class="text-sm text-slate-600 dark:text-slate-300 font-medium w-32 md:text-right">Sarah Jenkins</p>
+                  <a href="./pages/booking.html" class="inline-flex items-center justify-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-full text-xs font-bold uppercase tracking-wider shadow-sm transition-all">Book Class</a>
+                </div>
+              </div>
+
+              <!-- Session 4 -->
+              <div class="py-8 flex flex-col md:flex-row md:items-center justify-between gap-6 group hover:bg-primary-50/30 dark:hover:bg-slate-900/30 px-4 rounded-2xl transition-all duration-300">
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-12">
+                  <p class="text-sm font-semibold tracking-widest uppercase text-slate-400 dark:text-slate-500 w-28"><span class="inline-block" dir="ltr">06:00 PM</span></p>
+                  <h4 class="text-xl font-light text-slate-900 dark:text-white">Deep Restorative Yin</h4>
+                </div>
+                <div class="flex items-center justify-between md:justify-end gap-12">
+                  <p class="text-sm text-slate-600 dark:text-slate-300 font-medium w-32 md:text-right">Maya Patel</p>
+                  <a href="./pages/booking.html" class="inline-flex items-center justify-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-full text-xs font-bold uppercase tracking-wider shadow-sm transition-all">Book Class</a>
+                </div>
+              </div>
+              
             </div>
           </div>
         </section>
 
-        <!-- Call-to-action -->
-        <section class="mx-auto max-w-7xl px-6 pb-32 md:px-8">
-          <div class="relative overflow-hidden rounded-[60px] bg-primary-600 px-8 py-20 text-center text-white md:px-16 md:py-32">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/20 to-transparent"></div>
-            <div class="relative z-10 space-y-10">
-              <h2 class="text-4xl font-semibold md:text-6xl">Begin your journey to calm today.</h2>
-              <p class="mx-auto max-w-2xl text-lg text-primary-100 font-light">Join over 1,000 students who have found their center at Lotus Haven. Your first consultation is on us.</p>
-              <div class="flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
-                <a href="./pages/contact.html" class="btn-secondary !bg-white !text-primary-700 border-none px-12 py-5 text-lg">Book Now</a>
-                <a href="./pages/pricing.html" class="text-sm font-semibold underline underline-offset-8 decoration-primary-300 hover:decoration-white transition-all">View Membership Plans</a>
-              </div>
+        <!-- 7. Sanctuary Voices (Testimonials) -->
+        <section class="py-24 md:py-32 bg-[var(--bg)] px-6 md:px-8">
+          <div class="max-w-4xl mx-auto text-center space-y-8">
+            <span class="text-6xl font-light text-primary-300 dark:text-primary-800 leading-none block">“</span>
+            <blockquote class="text-2xl md:text-3xl font-light italic leading-relaxed text-slate-700 dark:text-slate-200">
+              Lotus Haven is not just a studio; it is a transition. The moment you step through the door, the noise of the city completely fades, and you are welcomed into a warm, grounding silence. It has completely changed my daily relationship with stress.
+            </blockquote>
+            <div class="pt-4 space-y-1">
+              <p class="text-base font-semibold text-slate-900 dark:text-white">Eleanor Vance</p>
+              <p class="text-xs uppercase tracking-widest text-slate-400">Lotus Haven Member since 2024</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. Final Sanctuary Invitation -->
+        <section class="py-24 md:py-36 px-6 bg-slate-900 text-center relative overflow-hidden">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#5d8a6733,transparent_40%)] pointer-events-none"></div>
+          <div class="max-w-3xl mx-auto space-y-8 relative z-10">
+            <p class="text-xs font-bold uppercase tracking-[0.4em] text-primary-300">Start Your Practice</p>
+            <h2 class="text-4xl md:text-6xl font-light text-white leading-tight">Step into the sanctuary.</h2>
+            <p class="text-lg text-slate-400 font-light max-w-xl mx-auto">Begin your journey towards mindful living and physical strength. Explore our membership tiers or book a private orientation.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+              <a href="./pages/register.html" class="inline-flex items-center justify-center px-10 py-5 bg-white text-slate-900 font-bold uppercase tracking-widest text-sm hover:bg-primary-50 rounded-full transition-all duration-300 shadow-md">Become a Member</a>
+              <a href="./pages/contact.html" class="inline-flex items-center justify-center px-10 py-5 bg-transparent text-white border border-slate-700 font-bold uppercase tracking-widest text-sm hover:bg-white/5 rounded-full transition-all duration-300">Speak With a Guide</a>
             </div>
           </div>
         </section>
@@ -274,7 +517,7 @@
         <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <!-- Brand -->
           <div class="space-y-6">
-            <a href="./" class="text-logo text-sm font-semibold uppercase tracking-[0.3em] text-primary-700 dark:text-primary-200 flex items-center"><img src="./assets/images/brand-logo.png" alt="brand-logo" class="w-12 h-12 mr-8">Lotus Haven</a>
+            <a href="./" class="text-logo text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary-700 dark:text-primary-200 flex items-center whitespace-nowrap"><img src="./assets/images/brand-logo.png" alt="brand-logo" class="w-8 h-8 sm:w-10 sm:h-10 mr-2 sm:mr-3 shrink-0"> Lotus Haven</a>
             <p class="text-sm leading-7">Cultivating calm through mindful yoga and meditation. Our studio is a sanctuary for modern wellness seekers in the heart of Harmony City.</p>
             <div class="flex gap-4">
               <!-- Social Icons -->
@@ -319,7 +562,7 @@
           <div class="lg:ml-auto">
             <h3 class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900 dark:text-white">Connect</h3>
             <div class="mt-6 space-y-4 text-sm">
-              <p class="flex items-center gap-3">123 Lotus Lane, Harmony City</p>
+              <p class="flex items-center gap-3">750 Wellness Ave, Manhattan, NY</p>
               <p class="flex items-center gap-3">(555) 012-3456</p>
               <p class="flex items-center gap-3">hello@lotushaven.com</p>
             </div>
@@ -342,6 +585,7 @@
     <script src="assets/js/site.js"></script>
   </body>
 </html>
+
 
 
 

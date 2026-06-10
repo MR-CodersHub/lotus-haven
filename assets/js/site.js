@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const themeToggle = document.querySelector('[data-action="toggle-theme"]');
-  const directionToggle = document.querySelector('[data-action="toggle-rtl"]');
+  const themeToggles = document.querySelectorAll('[data-action="toggle-theme"]');
+  const directionToggles = document.querySelectorAll('[data-action="toggle-rtl"]');
   const blogSearch = document.querySelector('#blog-search');
   const blogFilter = document.querySelector('#blog-filter');
 
@@ -29,14 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
   setTheme(savedTheme);
   setDirection(savedDirection);
 
-  themeToggle?.addEventListener('click', () => {
-    const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-    setTheme(nextTheme);
+  themeToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      setTheme(nextTheme);
+    });
   });
 
-  directionToggle?.addEventListener('click', () => {
-    const nextDirection = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';
-    setDirection(nextDirection);
+  directionToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const nextDirection = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';
+      setDirection(nextDirection);
+    });
   });
 
   const profileToggle = document.querySelector('[data-action="profile-menu-toggle"]');

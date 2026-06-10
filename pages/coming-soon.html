@@ -7,20 +7,14 @@
      <link rel="icon" type="image/png" href="../assets/images/brand-logo.png">
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
-  <body
+  <body class="bg-[var(--bg)] text-[var(--text)]">
       <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-[var(--surface)]/95 backdrop-blur-xl">
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 md:px-8">
-          <a href="../index.html" class="text-logo text-sm font-semibold uppercase tracking-[0.3em] text-primary-700 dark:text-primary-200">Lotus Haven</a>
-          <nav class="hidden items-center gap-4 text-sm font-medium text-slate-700 dark:text-slate-200 md:flex">
-            <a href="../index.html" class="hover:text-primary-700 dark:hover:text-primary-300">Home</a>
-            <a href="about.html" class="hover:text-primary-700 dark:hover:text-primary-300">About</a>
-            <a href="services.html" class="hover:text-primary-700 dark:hover:text-primary-300">Services</a>
-            <a href="blog.html" class="hover:text-primary-700 dark:hover:text-primary-300">Blog</a>
-            <a href="contact.html" class="hover:text-primary-700 dark:hover:text-primary-300">Contact</a>
-          </nav>
+          <a href="../" class="text-logo text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary-700 dark:text-primary-200 flex items-center whitespace-nowrap"><img src="../assets/images/brand-logo.png" alt="brand-logo" class="w-8 h-8 sm:w-10 sm:h-10 mr-2 sm:mr-3 shrink-0"> Lotus Haven</a>
+    
           <div class="flex items-center gap-3">
-            <button type="button" data-action="toggle-rtl" class="btn-secondary hidden md:inline-flex">RTL</button>
-            <button type="button" data-action="toggle-theme" class="btn-secondary">Mode</button>
+            <button type="button" data-action="toggle-rtl" class="btn-secondary !py-2.5 !px-3 sm:!px-4 !text-xs inline-flex h-11 items-center">RTL</button>
+            <button type="button" data-action="toggle-theme" class="btn-secondary !p-0 h-11 w-11 rounded-full hidden md:flex items-center justify-center transition-transform hover:rotate-12" aria-label="Toggle theme"><svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg><svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg></button>
             <div class="relative">
               <button type="button" data-action="profile-menu-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 shadow-soft transition hover:border-primary-500 hover:bg-primary-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" aria-label="Profile menu">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +22,7 @@
                   <path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </button>
-              <div data-profile-menu class="absolute right-0 z-50 mt-3 hidden min-w-[220px] overflow-hidden rounded-3xl border border-slate-200 bg-[var(--surface)] text-left shadow-soft dark:border-slate-700 dark:bg-slate-900">
+              <div data-profile-menu class="absolute right-0 z-50 mt-3 hidden min-w-[220px] overflow-hidden rounded-3xl border border-slate-200 bg-[var(--surface)] text-start shadow-soft dark:border-slate-700 dark:bg-slate-900">
                 <a href="login.html" class="block px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Login / Signup</a>
                 <a href="admin-dashboard.html" class="block px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Admin dashboard</a>
                 <a href="dashboard.html" class="block px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">User dashboard</a>
@@ -36,7 +30,7 @@
             </div>
           </div>
         </div>
-      </header> class="bg-[var(--bg)] text-[var(--text)]">
+      </header>
     <main class="grid min-h-screen place-items-center px-6 py-12 text-center md:px-8">
       <div class="max-w-2xl rounded-[40px] border border-[var(--border)] bg-[var(--surface)] p-10 shadow-soft">
         <p class="text-sm uppercase tracking-[0.35em] text-primary-700 dark:text-primary-200">Coming soon</p>
@@ -183,3 +177,4 @@
     <script src="../assets/js/site.js"></script>
   </body>
 </html>
+

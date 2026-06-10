@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Class • Lotus Haven</title>
+    <link rel="icon" type="image/png" href="../assets/images/brand-logo.png">
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <style>
+      /* Stylized physical ticket notch effects for confirmation screen */
+      .ticket-notch-left::before {
+        content: '';
+        position: absolute;
+        left: -12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: var(--bg);
+        border-right: 1px solid var(--border);
+        z-index: 10;
+      }
+      .ticket-notch-right::after {
+        content: '';
+        position: absolute;
+        right: -12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: var(--bg);
+        border-left: 1px solid var(--border);
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body class="bg-[var(--bg)] text-[var(--text)]">
+    <div class="min-h-screen flex flex-col justify-between">
+      
+      <!-- Header -->
+      <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-[var(--surface)]/95 backdrop-blur-xl">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 md:px-8">
+          <a href="../" class="text-logo text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary-700 dark:text-primary-200 flex items-center whitespace-nowrap"><img src="../assets/images/brand-logo.png" alt="brand-logo" class="w-8 h-8 sm:w-10 sm:h-10 mr-2 sm:mr-3 shrink-0"> Lotus Haven</a>
+          <nav class="hidden items-center gap-4 lg:gap-4 lg:gap-8 text-sm font-medium md:flex">
+            <a href="../" class="nav-link">Home</a>
+            <a href="home.html" class="nav-link">Home 2</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+          </nav>
+          <div class="flex items-center gap-3">
+            <button type="button" data-action="toggle-rtl" class="btn-secondary !py-2.5 !px-3 sm:!px-4 !text-xs inline-flex h-11 items-center">RTL</button>
+            <button type="button" data-action="toggle-theme" class="btn-secondary !p-0 h-11 w-11 rounded-full hidden md:flex items-center justify-center transition-transform hover:rotate-12" aria-label="Toggle theme">
+              <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+              <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+            </button>
+            
+            <div class="relative">
+              <button type="button" data-action="profile-menu-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 shadow-soft transition hover:border-primary-500 hover:bg-primary-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" aria-label="Profile menu">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div data-profile-menu class="absolute right-0 z-50 mt-3 hidden min-w-[220px] overflow-hidden rounded-3xl border border-slate-200 bg-[var(--surface)] text-start shadow-soft dark:border-slate-700 dark:bg-slate-900">
+                <a href="login.html" class="block px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Login / Signup</a>
+                <a href="admin-dashboard.html" class="block px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Admin dashboard</a>
+                <a href="dashboard.html" class="block px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">User dashboard</a>
+              </div>
+            </div>
+
+            <button type="button" data-action="mobile-menu-toggle" class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 shadow-soft transition hover:border-primary-500 hover:bg-primary-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" aria-label="Toggle menu">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div data-mobile-menu class="absolute left-6 right-6 top-full z-50 mt-4 hidden overflow-hidden rounded-3xl border border-slate-200 bg-[var(--surface)] p-6 shadow-xl dark:border-slate-800 dark:bg-slate-900 md:hidden">
+          <nav class="flex flex-col gap-4">
+            <a href="../" class="nav-link">Home</a>
+            <a href="home.html" class="nav-link">Home 2</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <hr class="border-slate-100 dark:border-slate-800 my-2">
+            <!-- Theme Toggle in Mobile Menu -->
+            <button type="button" data-action="toggle-theme" class="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-primary-600 transition-colors w-full text-start py-2" aria-label="Toggle theme">
+              <span class="w-5 h-5 flex items-center justify-center">
+                <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+              </span>
+              <span>Toggle Mode</span>
+            </button>
+            <a href="login.html" class="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-primary-600 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" /></svg>
+              Login / Signup
+            </a>
+            <a href="admin-dashboard.html" class="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-primary-600 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+              Admin Dashboard
+            </a>
+            <a href="dashboard.html" class="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-primary-600 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+              User Dashboard
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Main Area -->
+      <main class="relative flex-grow py-4 md:py-8 bg-[var(--bg)]">
+        <!-- Background Mesh -->
+        <div class="absolute inset-0 bg-mesh opacity-20 dark:opacity-10 pointer-events-none -z-10"></div>
+        
+        <div class="mx-auto max-w-7xl px-6 md:px-8">
+          
+          <!-- Page Header -->
+          <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <p class="text-logo text-xs font-semibold text-primary-600 dark:text-primary-400 mb-4">Practice Orientation</p>
+            <h1 class="text-4xl md:text-5xl font-light tracking-tight text-slate-900 dark:text-white">Reserve Your Space</h1>
+            <p class="mt-4 text-base text-slate-500 dark:text-slate-400 font-light">
+              Select your practice, pick a time slot, and reserve your preferred mat spot on our serene studio floor.
+            </p>
+          </div>
+
+          <!-- BOOKING FLOW CONTAINER -->
+          <div id="booking-flow-container" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            
+            <!-- Left Side: Steps (col-span-8) -->
+            <div class="lg:col-span-8 space-y-10">
+              
+              <!-- STEP 1: CLASS SELECTION -->
+              <div class="card space-y-6">
+                <div class="flex items-center gap-4 border-b border-slate-100 dark:border-slate-800 pb-4">
+                  <span class="w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center text-sm font-semibold">1</span>
+                  <h2 class="text-2xl font-light text-slate-900 dark:text-white">Choose Your Practice</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  
+                  <!-- Card Vinyasa -->
+                  <div data-class-id="vinyasa" class="class-option-card border-2 border-slate-200 dark:border-slate-800 rounded-3xl p-6 hover:border-primary-500 dark:hover:border-primary-700 cursor-pointer transition-all duration-300 bg-[var(--surface)] flex flex-col justify-between h-full relative overflow-hidden ring-primary-500">
+                    <div class="space-y-3">
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-widest text-primary-600">Yoga Flow</span>
+                        <span class="text-xs text-slate-400">60m</span>
+                      </div>
+                      <h3 class="text-xl font-medium text-slate-900 dark:text-white">Sunrise Vinyasa</h3>
+                      <p class="text-xs text-slate-500 dark:text-slate-400 font-light leading-relaxed">Dynamic sequences syncing breath with movement to build heat and flexibility.</p>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center pt-4 border-t border-slate-100 dark:border-slate-800/60">
+                      <span class="text-xs font-medium text-slate-400">Sarah Jenkins</span>
+                      <span class="text-lg font-light text-slate-900 dark:text-white">$25</span>
+                    </div>
+                  </div>
+
+                  <!-- Card Meditation -->
+                  <div data-class-id="meditation" class="class-option-card border-2 border-slate-200 dark:border-slate-800 rounded-3xl p-6 hover:border-primary-500 dark:hover:border-primary-700 cursor-pointer transition-all duration-300 bg-[var(--surface)] flex flex-col justify-between h-full relative overflow-hidden ring-primary-500">
+                    <div class="space-y-3">
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-widest text-primary-600">Stillness</span>
+                        <span class="text-xs text-slate-400">45m</span>
+                      </div>
+                      <h3 class="text-xl font-medium text-slate-900 dark:text-white">Morning Sound Meditation</h3>
+                      <p class="text-xs text-slate-500 dark:text-slate-400 font-light leading-relaxed">Restorative sound bowl healing and guided mindfulness to ground your awareness.</p>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center pt-4 border-t border-slate-100 dark:border-slate-800/60">
+                      <span class="text-xs font-medium text-slate-400">David Chen</span>
+                      <span class="text-lg font-light text-slate-900 dark:text-white">$20</span>
+                    </div>
+                  </div>
+
+                  <!-- Card Asana -->
+                  <div data-class-id="asana" class="class-option-card border-2 border-slate-200 dark:border-slate-800 rounded-3xl p-6 hover:border-primary-500 dark:hover:border-primary-700 cursor-pointer transition-all duration-300 bg-[var(--surface)] flex flex-col justify-between h-full relative overflow-hidden ring-primary-500">
+                    <div class="space-y-3">
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-widest text-primary-600">Yoga Flow</span>
+                        <span class="text-xs text-slate-400">45m</span>
+                      </div>
+                      <h3 class="text-xl font-medium text-slate-900 dark:text-white">Express Power Asana</h3>
+                      <p class="text-xs text-slate-500 dark:text-slate-400 font-light leading-relaxed">High-energy core asana practice focused on arm balances, builds, and holds.</p>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center pt-4 border-t border-slate-100 dark:border-slate-800/60">
+                      <span class="text-xs font-medium text-slate-400">Sarah Jenkins</span>
+                      <span class="text-lg font-light text-slate-900 dark:text-white">$22</span>
+                    </div>
+                  </div>
+
+                  <!-- Card Yin -->
+                  <div data-class-id="yin" class="class-option-card border-2 border-slate-200 dark:border-slate-800 rounded-3xl p-6 hover:border-primary-500 dark:hover:border-primary-700 cursor-pointer transition-all duration-300 bg-[var(--surface)] flex flex-col justify-between h-full relative overflow-hidden ring-primary-500">
+                    <div class="space-y-3">
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-widest text-primary-600">Stillness</span>
+                        <span class="text-xs text-slate-400">75m</span>
+                      </div>
+                      <h3 class="text-xl font-medium text-slate-900 dark:text-white">Deep Restorative Yin</h3>
+                      <p class="text-xs text-slate-500 dark:text-slate-400 font-light leading-relaxed">Slow floor postures targeting joints and deep tissues. Highly restorative.</p>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center pt-4 border-t border-slate-100 dark:border-slate-800/60">
+                      <span class="text-xs font-medium text-slate-400">Maya Patel</span>
+                      <span class="text-lg font-light text-slate-900 dark:text-white">$25</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- STEP 2: DATE & TIME SELECTOR -->
+              <div class="card space-y-6">
+                <div class="flex items-center gap-4 border-b border-slate-100 dark:border-slate-800 pb-4">
+                  <span class="w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center text-sm font-semibold">2</span>
+                  <h2 class="text-2xl font-light text-slate-900 dark:text-white">Select Date & Time</h2>
+                </div>
+                
+                <!-- Date Horizontal Scroll Ribbon -->
+                <div class="space-y-3">
+                  <label class="text-xs uppercase tracking-widest font-bold text-slate-400">Select Date</label>
+                  <div id="calendar-ribbon" class="flex gap-3 overflow-x-auto pb-2 scrollbar-none">
+                    <!-- Loaded dynamically via javascript -->
+                  </div>
+                </div>
+
+                <!-- Time Slot Grid -->
+                <div class="space-y-3 pt-2">
+                  <label class="text-xs uppercase tracking-widest font-bold text-slate-400">Available Sessions</label>
+                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <button type="button" data-time="07:00 AM" class="time-slot-btn py-3 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-primary-500 font-medium transition-all text-sm bg-[var(--surface)] text-slate-800 dark:text-slate-200 ring-primary-500">
+                      07:00 AM
+                    </button>
+                    <button type="button" data-time="09:30 AM" class="time-slot-btn py-3 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-primary-500 font-medium transition-all text-sm bg-[var(--surface)] text-slate-800 dark:text-slate-200 ring-primary-500">
+                      09:30 AM
+                    </button>
+                    <button type="button" data-time="12:00 PM" class="time-slot-btn py-3 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-primary-500 font-medium transition-all text-sm bg-[var(--surface)] text-slate-800 dark:text-slate-200 ring-primary-500">
+                      12:00 PM
+                    </button>
+                    <button type="button" data-time="06:00 PM" class="time-slot-btn py-3 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-primary-500 font-medium transition-all text-sm bg-[var(--surface)] text-slate-800 dark:text-slate-200 ring-primary-500">
+                      06:00 PM
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 3: YOGA MAT SELECTOR -->
+              <div class="card space-y-6">
+                <div class="flex items-center gap-4 border-b border-slate-100 dark:border-slate-800 pb-4">
+                  <span class="w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center text-sm font-semibold">3</span>
+                  <h2 class="text-2xl font-light text-slate-900 dark:text-white">Choose Your Mat Position</h2>
+                </div>
+                
+                <p class="text-sm text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+                  Select a green mat to book your spot. The top platform represents the instructor's orientation.
+                </p>
+
+                <!-- Visual Studio Layout Board -->
+                <div class="border border-slate-200/80 dark:border-slate-800 rounded-[2rem] p-6 sm:p-10 bg-slate-50/50 dark:bg-slate-950/20 max-w-lg mx-auto">
+                  
+                  <!-- Front: Instructor Platform -->
+                  <div class="mb-12 text-center">
+                    <div class="inline-block px-12 py-3 rounded-2xl bg-primary-100 dark:bg-primary-900/30 border border-primary-500/10 text-xs font-semibold text-primary-700 dark:text-primary-300 uppercase tracking-widest">
+                      Instructor Platform
+                    </div>
+                  </div>
+
+                  <!-- 4x5 Grid Layout (20 Mats) -->
+                  <div class="grid grid-cols-5 gap-4 justify-items-center">
+                    <!-- Filled dynamically with JS -->
+                  </div>
+
+                  <!-- Mat Legend -->
+                  <div class="flex justify-center gap-6 mt-10 text-xs border-t border-slate-200/50 dark:border-slate-800/80 pt-6">
+                    <div class="flex items-center gap-2">
+                      <span class="w-3.5 h-3.5 rounded-lg border border-primary-300 bg-primary-50"></span>
+                      <span class="text-slate-500">Available</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="w-3.5 h-3.5 rounded-lg bg-slate-100 border border-slate-200"></span>
+                      <span class="text-slate-500">Occupied</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="w-3.5 h-3.5 rounded-lg border border-accent-500 bg-accent-soft ring-1 ring-accent-500"></span>
+                      <span class="text-slate-500">Selected</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- STEP 4: STUDENT DETAILS FORM -->
+              <div class="card space-y-6">
+                <div class="flex items-center gap-4 border-b border-slate-100 dark:border-slate-800 pb-4">
+                  <span class="w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center text-sm font-semibold">4</span>
+                  <h2 class="text-2xl font-light text-slate-900 dark:text-white">Your Information</h2>
+                </div>
+                
+                <form id="booking-details-form" class="space-y-4">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label for="student-name" class="block text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Full Name</label>
+                      <input type="text" id="student-name" class="input-field" placeholder="Enter your full name" required />
+                    </div>
+                    <div>
+                      <label for="student-email" class="block text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Email Address</label>
+                      <input type="email" id="student-email" class="input-field" placeholder="name@domain.com" required />
+                    </div>
+                  </div>
+                  
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label for="student-skill" class="block text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Yoga Experience Level</label>
+                      <select id="student-skill" class="input-field appearance-none">
+                        <option value="beginner">Beginner Friendly</option>
+                        <option value="intermediate" selected>Intermediate Practice</option>
+                        <option value="advanced">Advanced Practice</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="student-notes" class="block text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Health Notes / Injuries (Optional)</label>
+                      <input type="text" id="student-notes" class="input-field" placeholder="Any details for your instructor..." />
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+            <!-- Right Side: Sidebar Dynamic Checkout Summary (col-span-4) -->
+            <div class="lg:col-span-4 lg:sticky lg:top-28">
+              <div class="card space-y-6 bg-slate-50/50 dark:bg-slate-900/30 border border-[var(--border)]">
+                <h3 class="text-xl font-light text-slate-900 dark:text-white pb-3 border-b border-slate-200/50 dark:border-slate-800/80">Reservation Summary</h3>
+                
+                <div class="space-y-4 text-sm">
+                  
+                  <!-- Class Row -->
+                  <div class="flex justify-between items-start gap-4">
+                    <span class="text-slate-400">Class:</span>
+                    <span id="summary-class-name" class="font-medium text-slate-800 dark:text-slate-200 text-right">Sunrise Vinyasa</span>
+                  </div>
+
+                  <!-- Instructor Row -->
+                  <div class="flex justify-between items-center">
+                    <span class="text-slate-400">Guide:</span>
+                    <span id="summary-instructor" class="font-medium text-slate-800 dark:text-slate-200">Sarah Jenkins</span>
+                  </div>
+
+                  <!-- Date Row -->
+                  <div class="flex justify-between items-center">
+                    <span class="text-slate-400">Date:</span>
+                    <span id="summary-date" class="font-medium text-slate-800 dark:text-slate-200">Not selected</span>
+                  </div>
+
+                  <!-- Time Row -->
+                  <div class="flex justify-between items-center">
+                    <span class="text-slate-400">Time:</span>
+                    <span id="summary-time" class="font-medium text-slate-800 dark:text-slate-200">Not selected</span>
+                  </div>
+
+                  <!-- Mat Row -->
+                  <div class="flex justify-between items-center">
+                    <span class="text-slate-400">Reserved Spot:</span>
+                    <span id="summary-mat" class="font-semibold text-accent-600">Not selected</span>
+                  </div>
+                  
+                </div>
+
+                <div class="border-t border-slate-200/50 dark:border-slate-800/80 pt-4 flex justify-between items-end">
+                  <span class="text-sm text-slate-400">Total Price:</span>
+                  <span id="summary-price" class="text-3xl font-light text-slate-900 dark:text-white">$25</span>
+                </div>
+
+                <div class="pt-2">
+                  <button type="submit" form="booking-details-form" id="confirm-booking-btn" class="w-full btn-primary !rounded-2xl py-4 flex items-center justify-center gap-2">
+                    Confirm Reservation
+                  </button>
+                  <p class="text-center text-[10px] text-slate-400 mt-3">Bookings can be rescheduled up to 12 hours prior to start.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- BOOKING SUCCESS SCREEN (Hidden by default) -->
+          <div id="booking-success-container" class="hidden max-w-2xl mx-auto py-6">
+            <div class="text-center mb-8">
+              <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400 mx-auto mb-4 border border-primary-500/10">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-light text-slate-900 dark:text-white">Booking Confirmed!</h2>
+              <p class="text-sm text-slate-500 dark:text-slate-400 font-light mt-2">
+                Your sanctuary slot has been reserved. A copy of this pass has been sent to your email.
+              </p>
+            </div>
+
+            <!-- Ticket Component -->
+            <div class="relative rounded-3xl border border-slate-200 bg-[var(--surface)] shadow-xl dark:border-slate-800 overflow-hidden">
+              
+              <!-- Ticket Header -->
+              <div class="bg-primary-600 p-6 text-white text-center flex flex-col items-center">
+                <img src="../assets/images/brand-logo.png" alt="brand-logo" class="w-10 h-10 brightness-0 invert mb-3">
+                <p class="text-[10px] uppercase tracking-[0.4em] font-semibold text-primary-100">Lotus Haven Class Pass</p>
+              </div>
+
+              <!-- Ticket Body -->
+              <div class="p-8 space-y-6 relative ticket-notch-left ticket-notch-right">
+                
+                <div class="grid grid-cols-2 gap-6 text-sm pb-6 border-b border-dashed border-slate-200 dark:border-slate-800">
+                  <div>
+                    <span class="text-xs uppercase tracking-wider text-slate-400 block mb-0.5">Practice</span>
+                    <span id="ticket-class-name" class="font-medium text-slate-800 dark:text-slate-200">Sunrise Vinyasa</span>
+                  </div>
+                  <div>
+                    <span class="text-xs uppercase tracking-wider text-slate-400 block mb-0.5">Instructor</span>
+                    <span id="ticket-instructor" class="font-medium text-slate-800 dark:text-slate-200">Sarah Jenkins</span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6 text-sm pb-6 border-b border-dashed border-slate-200 dark:border-slate-800">
+                  <div>
+                    <span class="text-xs uppercase tracking-wider text-slate-400 block mb-0.5">Date & Time</span>
+                    <span id="ticket-date-time" class="font-medium text-slate-800 dark:text-slate-200">Wed, Jun 10 • 07:00 AM</span>
+                  </div>
+                  <div>
+                    <span class="text-xs uppercase tracking-wider text-slate-400 block mb-0.5">Studio Mat</span>
+                    <span id="ticket-mat" class="font-bold text-accent-600 text-lg">Mat #12</span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm pb-4 items-center">
+                  <div>
+                    <span class="text-xs uppercase tracking-wider text-slate-400 block mb-0.5">Attendee</span>
+                    <span id="ticket-attendee-name" class="font-medium text-slate-800 dark:text-slate-200">Eleanor Vance</span>
+                    <span id="ticket-attendee-email" class="text-xs text-slate-400 block mt-0.5">eleanor@domain.com</span>
+                  </div>
+                  
+                  <!-- Styled CSS QR Code representing actual pass QR -->
+                  <div class="flex justify-start sm:justify-end">
+                    <div class="p-3 border border-slate-200 dark:border-slate-700 bg-white rounded-2xl flex items-center justify-center">
+                      <div class="w-20 h-20 grid grid-cols-4 gap-1 opacity-90">
+                        <div class="bg-slate-900 rounded-[2px]"></div><div class="bg-slate-900 rounded-[2px]"></div><div></div><div class="bg-slate-900 rounded-[2px]"></div>
+                        <div></div><div class="bg-slate-900 rounded-[2px]"></div><div class="bg-slate-900 rounded-[2px]"></div><div></div>
+                        <div class="bg-slate-900 rounded-[2px]"></div><div></div><div class="bg-slate-900 rounded-[2px]"></div><div class="bg-slate-900 rounded-[2px]"></div>
+                        <div class="bg-slate-900 rounded-[2px]"></div><div class="bg-slate-900 rounded-[2px]"></div><div></div><div class="bg-slate-900 rounded-[2px]"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Ticket Footer Actions -->
+              <div class="bg-slate-50 dark:bg-slate-950 px-8 py-6 border-t border-slate-100 dark:border-slate-900 flex flex-col sm:flex-row gap-4 justify-between items-center">
+                <button type="button" id="print-ticket-btn" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-2.5 bg-white border border-slate-300 rounded-xl text-xs font-bold uppercase tracking-wider text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-all">
+                  Print Pass
+                </button>
+                <div class="flex gap-4 w-full sm:w-auto justify-end">
+                  <button type="button" id="book-another-btn" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-2.5 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-xl text-xs font-bold uppercase tracking-wider transition-all">
+                    New Booking
+                  </button>
+                  <a href="dashboard.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-2.5 bg-primary-600 hover:bg-primary-700 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all">
+                    Go to Dashboard
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="border-t border-slate-200/80 bg-[var(--surface)] py-16 text-slate-600 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-300">
+        <div class="mx-auto max-w-7xl px-6 md:px-8">
+          <div class="flex flex-wrap items-start justify-between gap-8">
+            <div class="min-w-[220px] max-w-[28rem]">
+              <p class="text-sm uppercase tracking-[0.35em] text-primary-700 dark:text-primary-200 flex items-center">
+                <img src="../assets/images/brand-logo.png" alt="brand-logo" class="w-12 h-12 mr-8"> Lotus Haven
+              </p>
+              <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">Serene yoga, meditation, and membership tools for busy students who want calm, consistent progress.</p>
+              <div class="mt-6 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                <p>750 Wellness Ave, Manhattan, NY</p>
+                <p>(555) 012-3456</p>
+                <p>hello@lotushaven.com</p>
+              </div>
+            </div>
+            <div class="min-w-[220px]">
+              <h3 class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900 dark:text-white">Quick links</h3>
+              <ul class="mt-5 space-y-3 text-sm">
+                <li><a href="../" class="hover:text-primary-700 dark:hover:text-primary-300">Home</a></li>
+                <li><a href="about.html" class="hover:text-primary-700 dark:hover:text-primary-300">About</a></li>
+                <li><a href="services.html" class="hover:text-primary-700 dark:hover:text-primary-300">Services</a></li>
+                <li><a href="blog.html" class="hover:text-primary-700 dark:hover:text-primary-300">Blog</a></li>
+              </ul>
+            </div>
+            <div class="min-w-[220px]">
+              <h3 class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900 dark:text-white">Resources</h3>
+              <ul class="mt-5 space-y-3 text-sm">
+                <li><a href="faq.html" class="hover:text-primary-700 dark:hover:text-primary-300">FAQ</a></li>
+                <li><a href="policy.html" class="hover:text-primary-700 dark:hover:text-primary-300">Privacy Policy</a></li>
+                <li><a href="terms.html" class="hover:text-primary-700 dark:hover:text-primary-300">Terms</a></li>
+                <li><a href="maintenance.html" class="hover:text-primary-700 dark:hover:text-primary-300">Maintenance</a></li>
+              </ul>
+            </div>
+            <div class="min-w-[220px]">
+              <h3 class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900 dark:text-white">Studio</h3>
+              <p class="mt-5 text-sm leading-7 text-slate-600 dark:text-slate-300">Visit our studio for guided classes, private sessions, and coaching in a calm environment.</p>
+              <a href="contact.html" class="mt-6 inline-flex rounded-full bg-primary-600 px-5 py-3 text-sm font-semibold text-white hover:bg-primary-700">Contact us</a>
+            </div>
+          </div>
+          <div class="mt-10 flex flex-col gap-4 border-t border-slate-200/70 pt-8 text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+            <p>© 2026 Lotus Haven. Designed for mindful growth.</p>
+            <div class="flex flex-wrap gap-4">
+              <a href="about.html" class="hover:text-primary-700 dark:hover:text-primary-300">About</a>
+              <a href="services.html" class="hover:text-primary-700 dark:hover:text-primary-300">Services</a>
+              <a href="contact.html" class="hover:text-primary-700 dark:hover:text-primary-300">Contact</a>
+              <a href="faq.html" class="hover:text-primary-700 dark:hover:text-primary-300">FAQ</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- Core Interactions Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        
+        // Classes Data Setup
+        const classesData = {
+          vinyasa: {
+            name: "Sunrise Vinyasa Flow",
+            instructor: "Sarah Jenkins",
+            price: "$25",
+            duration: "60 mins",
+          },
+          meditation: {
+            name: "Morning Sound Meditation",
+            instructor: "David Chen",
+            price: "$20",
+            duration: "45 mins",
+          },
+          asana: {
+            name: "Express Power Asana",
+            instructor: "Sarah Jenkins",
+            price: "$22",
+            duration: "45 mins",
+          },
+          yin: {
+            name: "Deep Restorative Yin",
+            instructor: "Maya Patel",
+            price: "$25",
+            duration: "75 mins",
+          }
+        };
+
+        // Live Selected States
+        let selectedClassId = 'vinyasa';
+        let selectedDateText = '';
+        let selectedTimeText = '';
+        let selectedMatNum = null;
+
+        // Elements
+        const classOptionCards = document.querySelectorAll('.class-option-card');
+        const timeSlotBtns = document.querySelectorAll('.time-slot-btn');
+        const calendarRibbon = document.getElementById('calendar-ribbon');
+        const matsContainer = document.querySelector('.grid-cols-5');
+        
+        // Checkout Summary Elements
+        const summaryClassName = document.getElementById('summary-class-name');
+        const summaryInstructor = document.getElementById('summary-instructor');
+        const summaryDate = document.getElementById('summary-date');
+        const summaryTime = document.getElementById('summary-time');
+        const summaryMat = document.getElementById('summary-mat');
+        const summaryPrice = document.getElementById('summary-price');
+
+        // Render Calendar Ribbon
+        function renderCalendar() {
+          const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+          const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+          
+          calendarRibbon.innerHTML = '';
+          const today = new Date();
+          
+          for (let i = 0; i < 7; i++) {
+            const date = new Date(today);
+            date.setDate(today.getDate() + i);
+            
+            const dayOfWeek = daysOfWeek[date.getDay()];
+            const dayNum = date.getDate();
+            const monthText = months[date.getMonth()];
+            const formattedDateString = `${dayOfWeek}, ${monthText} ${dayNum}`;
+            
+            // Create Card Element
+            const dateCard = document.createElement('button');
+            dateCard.type = 'button';
+            dateCard.className = `flex-shrink-0 w-16 py-3 border rounded-2xl flex flex-col items-center gap-1 transition-all duration-300 bg-[var(--surface)] text-slate-800 dark:text-slate-200 ring-primary-500 hover:border-primary-500 ${i === 0 ? 'border-primary-600 bg-primary-50 dark:bg-primary-950/20 text-primary-700 dark:text-primary-300 ring-1 ring-primary-500' : 'border-slate-200 dark:border-slate-800'}`;
+            dateCard.innerHTML = `
+              <span class="text-[10px] uppercase font-bold tracking-wider opacity-60">${dayOfWeek}</span>
+              <span class="text-lg font-semibold leading-none">${dayNum}</span>
+            `;
+            
+            if (i === 0) {
+              selectedDateText = formattedDateString;
+              summaryDate.textContent = selectedDateText;
+            }
+            
+            dateCard.addEventListener('click', () => {
+              document.querySelectorAll('#calendar-ribbon button').forEach(b => {
+                b.classList.remove('border-primary-600', 'bg-primary-50', 'dark:bg-primary-950/20', 'text-primary-700', 'dark:text-primary-300', 'ring-1', 'ring-primary-500');
+                b.classList.add('border-slate-200', 'dark:border-slate-800');
+              });
+              dateCard.classList.remove('border-slate-200', 'dark:border-slate-800');
+              dateCard.classList.add('border-primary-600', 'bg-primary-50', 'dark:bg-primary-950/20', 'text-primary-700', 'dark:text-primary-300', 'ring-1', 'ring-primary-500');
+              
+              selectedDateText = formattedDateString;
+              summaryDate.textContent = selectedDateText;
+            });
+            
+            calendarRibbon.appendChild(dateCard);
+          }
+        }
+
+        // Render visual mats grid
+        function renderMats() {
+          matsContainer.innerHTML = '';
+          
+          // Let's declare some pre-occupied mat indices (static for simplicity, feels dynamic)
+          const occupiedMats = [2, 5, 8, 14, 18];
+          
+          for (let i = 1; i <= 20; i++) {
+            const matButton = document.createElement('button');
+            matButton.type = 'button';
+            matButton.className = 'w-9 h-11 sm:w-12 sm:h-14 rounded-xl text-center text-xs font-medium border flex items-center justify-center transition-all duration-300';
+            
+            if (occupiedMats.includes(i)) {
+              // Occupied State
+              matButton.className += ' bg-slate-100 dark:bg-slate-800 text-slate-400 border-slate-200 dark:border-slate-800 cursor-not-allowed';
+              matButton.disabled = true;
+              matButton.innerHTML = `
+                <svg class="w-4 h-4 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+              `;
+            } else {
+              // Available State
+              matButton.className += ' border-primary-300 dark:border-primary-800 hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-950/20 text-slate-700 dark:text-slate-300 cursor-pointer';
+              matButton.textContent = i;
+              
+              matButton.addEventListener('click', () => {
+                // Remove selected classes from all mats
+                document.querySelectorAll('.grid-cols-5 button:not(:disabled)').forEach(btn => {
+                  btn.classList.remove('border-accent-500', 'bg-accent-soft', 'text-accent-700', 'scale-105', 'font-semibold', 'ring-2', 'ring-accent-500');
+                  btn.classList.add('border-primary-300', 'dark:border-primary-800', 'hover:border-primary-500');
+                });
+                
+                // Add select styling to clicked mat
+                matButton.classList.remove('border-primary-300', 'dark:border-primary-800', 'hover:border-primary-500');
+                matButton.classList.add('border-accent-500', 'bg-accent-soft', 'text-accent-700', 'scale-105', 'font-semibold', 'ring-2', 'ring-accent-500');
+                
+                selectedMatNum = i;
+                summaryMat.textContent = `Mat #${i}`;
+              });
+            }
+            matsContainer.appendChild(matButton);
+          }
+        }
+
+        // Initialize state bindings
+        function initClassSelector() {
+          // Default selection classes trigger
+          document.querySelector('[data-class-id="vinyasa"]')?.classList.add('border-primary-600', 'bg-primary-50/20', 'ring-2');
+          
+          classOptionCards.forEach(card => {
+            card.addEventListener('click', () => {
+              classOptionCards.forEach(c => c.classList.remove('border-primary-600', 'bg-primary-50/20', 'ring-2'));
+              card.classList.add('border-primary-600', 'bg-primary-50/20', 'ring-2');
+              
+              selectedClassId = card.dataset.classId;
+              const classData = classesData[selectedClassId];
+              
+              summaryClassName.textContent = classData.name;
+              summaryInstructor.textContent = classData.instructor;
+              summaryPrice.textContent = classData.price;
+            });
+          });
+        }
+
+        function initTimeSlots() {
+          // Pre-select first time slot
+          const firstSlot = timeSlotBtns[0];
+          if (firstSlot) {
+            firstSlot.classList.add('border-primary-600', 'bg-primary-50', 'dark:bg-primary-950/20', 'text-primary-700', 'dark:text-primary-300', 'ring-1');
+            selectedTimeText = firstSlot.dataset.time;
+            summaryTime.textContent = selectedTimeText;
+          }
+          
+          timeSlotBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+              timeSlotBtns.forEach(b => b.classList.remove('border-primary-600', 'bg-primary-50', 'dark:bg-primary-950/20', 'text-primary-700', 'dark:text-primary-300', 'ring-1'));
+              btn.classList.add('border-primary-600', 'bg-primary-50', 'dark:bg-primary-950/20', 'text-primary-700', 'dark:text-primary-300', 'ring-1');
+              
+              selectedTimeText = btn.dataset.time;
+              summaryTime.textContent = selectedTimeText;
+            });
+          });
+        }
+
+        // Form Submission logic (Generate Class Pass Ticket screen)
+        const detailsForm = document.getElementById('booking-details-form');
+        const confirmBtn = document.getElementById('confirm-booking-btn');
+        const bookingFlow = document.getElementById('booking-flow-container');
+        const successScreen = document.getElementById('booking-success-container');
+        
+        detailsForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          // Verify spot mat selection
+          if (selectedMatNum === null) {
+            alert('Please select a yoga mat on the studio floor grid before confirming.');
+            return;
+          }
+
+          const studentName = document.getElementById('student-name').value;
+          const studentEmail = document.getElementById('student-email').value;
+          const classData = classesData[selectedClassId];
+          
+          // Bind data values to final class pass ticket elements
+          document.getElementById('ticket-class-name').textContent = classData.name;
+          document.getElementById('ticket-instructor').textContent = classData.instructor;
+          document.getElementById('ticket-date-time').textContent = `${selectedDateText} • ${selectedTimeText}`;
+          document.getElementById('ticket-mat').textContent = `Mat #${selectedMatNum}`;
+          document.getElementById('ticket-attendee-name').textContent = studentName;
+          document.getElementById('ticket-attendee-email').textContent = studentEmail;
+          
+          // Hide Form Grid, Display Ticket State
+          bookingFlow.classList.add('hidden');
+          successScreen.classList.remove('hidden');
+          
+          // Smooth scroll to top of ticket pass
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Ticket Screen Actions Bindings
+        document.getElementById('print-ticket-btn').addEventListener('click', () => {
+          window.print();
+        });
+
+        document.getElementById('book-another-btn').addEventListener('click', () => {
+          // Reset form fields
+          detailsForm.reset();
+          selectedMatNum = null;
+          summaryMat.textContent = 'Not selected';
+          
+          // Re-render grids
+          renderMats();
+          
+          // Switch back states
+          successScreen.classList.add('hidden');
+          bookingFlow.classList.remove('hidden');
+        });
+
+        // Initialize components
+        renderCalendar();
+        renderMats();
+        initClassSelector();
+        initTimeSlots();
+      });
+    </script>
+    
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>
