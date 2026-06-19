@@ -5,10 +5,11 @@ directory = r"d:\MR-CodersHub\Front-end Projects\May Day\Yoga-Studio"
 
 # The header for files in pages/
 pages_header = """<header class="sticky top-0 z-50 border-b border-slate-200/70 bg-[var(--surface)]/95 backdrop-blur-xl">
-        <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 md:px-8">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-8">
           <a href="../index.html" class="text-logo text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary-700 dark:text-primary-200 flex items-center whitespace-nowrap"><img src="../assets/images/brand-logo.png" alt="brand-logo" class="w-8 h-8 sm:w-10 sm:h-10 mr-2 sm:mr-3 shrink-0"> Lotus</a>
-          <nav class="hidden items-center gap-4 lg:gap-4 lg:gap-8 text-sm font-medium md:flex">
+          <nav class="hidden items-center gap-3 lg:gap-8 text-sm font-medium md:flex">
             <a href="../index.html" class="nav-link">Home</a>
+            <a href="home.html" class="nav-link">Home 2</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="services.html" class="nav-link">Wellness Programs</a>
             <a href="blog.html" class="nav-link">Blog</a>
