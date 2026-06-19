@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pricing • Lotus</title>
-     <link rel="icon" type="image/png" href="../assets/images/brand-logo.png">
-    <link rel="stylesheet" href="../assets/css/styles.css" />
-  </head>
-  <body class="bg-[var(--bg)] text-[var(--text)]">
-                <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-[var(--surface)]/95 backdrop-blur-xl">
+import os
+import re
+
+directory = r"d:\MR-CodersHub\Front-end Projects\May Day\Yoga-Studio"
+
+# The header for files in pages/
+pages_header = """<header class="sticky top-0 z-50 border-b border-slate-200/70 bg-[var(--surface)]/95 backdrop-blur-xl">
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 md:px-8">
           <a href="../index.html" class="text-logo text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary-700 dark:text-primary-200 flex items-center whitespace-nowrap"><img src="../assets/images/brand-logo.png" alt="brand-logo" class="w-8 h-8 sm:w-10 sm:h-10 mr-2 sm:mr-3 shrink-0"> Lotus</a>
           <nav class="hidden items-center gap-4 lg:gap-4 lg:gap-8 text-sm font-medium md:flex">
             <a href="../index.html" class="nav-link">Home</a>
-            <a href="home.html" class="nav-link">Home 2</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="services.html" class="nav-link">Wellness Programs</a>
             <a href="blog.html" class="nav-link">Blog</a>
@@ -49,7 +44,6 @@
         <div data-mobile-menu class="absolute left-6 right-6 top-full z-50 mt-4 hidden overflow-hidden rounded-3xl border border-slate-200 bg-[var(--surface)] p-6 shadow-xl dark:border-slate-800 dark:bg-slate-900 md:hidden">
           <nav class="flex flex-col gap-4">
             <a href="../index.html" class="nav-link">Home</a>
-            <a href="home.html" class="nav-link">Home 2</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="services.html" class="nav-link">Wellness Programs</a>
             <a href="blog.html" class="nav-link">Blog</a>
@@ -77,90 +71,10 @@
             </a>
           </nav>
         </div>
-      </header>
+      </header>"""
 
-    <main class="mx-auto max-w-7xl px-6 py-12 md:px-8">
-      <section class="mb-12 text-center">
-        <p class="text-sm uppercase tracking-[0.35em] text-primary-700 dark:text-primary-200">Pricing</p>
-        <h1 class="mt-4 text-4xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-5xl">Flexible memberships for every wellness goal.</h1>
-        <p class="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300">Choose a plan with the right balance of classes, support, and digital access for your lifestyle.</p>
-      </section>
-
-      <section class="grid gap-8 md:grid-cols-3">
-        <div class="card">
-          <p class="text-sm uppercase tracking-[0.35em] text-primary-700 dark:text-primary-200">Starter</p>
-          <h2 class="mt-5 text-4xl font-semibold text-slate-900 dark:text-white">$49</h2>
-          <p class="mt-4 text-slate-600 dark:text-slate-300">2 classes per week, access to meditation sessions, and welcome support.</p>
-          <ul class="mt-6 space-y-3 text-slate-600 dark:text-slate-300">
-            <li>• Group classes</li>
-            <li>• Basic dashboard access</li>
-            <li>• Recorded sessions</li>
-          </ul>
-          <a href="../pages/contact.html" class="mt-8 inline-flex btn-primary">Choose starter</a>
-        </div>
-        <div class="card border-primary-500/30 bg-primary-50 dark:bg-slate-900">
-          <p class="text-sm uppercase tracking-[0.35em] text-primary-700">Popular</p>
-          <h2 class="mt-5 text-4xl font-semibold text-slate-900 dark:text-white">$79</h2>
-          <p class="mt-4 text-slate-600 dark:text-slate-300">Unlimited classes, membership planning, and premium dashboard tools.</p>
-          <ul class="mt-6 space-y-3 text-slate-600 dark:text-slate-300">
-            <li>• Unlimited classes</li>
-            <li>• Priority booking</li>
-            <li>• Private session credits</li>
-          </ul>
-          <a href="../pages/contact.html" class="mt-8 inline-flex btn-primary">Choose premium</a>
-        </div>
-        <div class="card">
-          <p class="text-sm uppercase tracking-[0.35em] text-primary-700 dark:text-primary-200">Studio</p>
-          <h2 class="mt-5 text-4xl font-semibold text-slate-900 dark:text-white">$129</h2>
-          <p class="mt-4 text-slate-600 dark:text-slate-300">Full access to classes, coaching, workshops, and student wellness reporting.</p>
-          <ul class="mt-6 space-y-3 text-slate-600 dark:text-slate-300">
-            <li>• All classes included</li>
-            <li>• Personal coaching</li>
-            <li>• Enhanced dashboard</li>
-          </ul>
-          <a href="../pages/contact.html" class="mt-8 inline-flex btn-primary">Choose studio</a>
-        </div>
-      </section>
-    
-      <section class="mt-16 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-        <div>
-          <p class="text-sm uppercase tracking-[0.35em] text-primary-700 dark:text-primary-200">Studio spotlight</p>
-          <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white">Pricing with calm, modern design.</h2>
-          <p class="mt-4 text-base leading-8 text-slate-600 dark:text-slate-300">Use our guided classes, meditation tools, and studio resources to stay grounded while managing schedules, plans, and wellness progress.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <span class="rounded-full bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700">Live classes</span>
-            <span class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200">Private coaching</span>
-            <span class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200">Recorded sessions</span>
-          </div>
-        </div>
-        <img src="https://images.unsplash.com/photo-1517832207067-4db24a2ae47c?auto=format&fit=crop&w=1200&q=80" alt="Calm yoga space" class="h-72 w-full rounded-[40px] object-cover shadow-soft" loading="lazy" />
-      </section>
-    
-
-      <section class="mt-16 rounded-[40px] border border-[var(--border)] bg-[var(--surface)] p-8 shadow-soft">
-        <div class="grid gap-8 lg:grid-cols-[0.9fr_0.55fr] lg:items-center">
-          <div>
-            <p class="text-sm uppercase tracking-[0.35em] text-primary-700 dark:text-primary-200">Benefits</p>
-            <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white">What makes Lotus feel different?</h2>
-            <p class="mt-4 text-base leading-8 text-slate-600 dark:text-slate-300">Every experience is designed to support wellbeing, consistency, and calm progress.</p>
-          </div>
-          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80" alt="Wellness service image" class="h-72 w-full rounded-[32px] object-cover shadow-soft" loading="lazy" />
-        </div>
-        <div class="mt-10 grid gap-4 sm:grid-cols-2">
-          <div class="rounded-3xl bg-slate-100 p-6 dark:bg-slate-900">
-            <h3 class="text-xl font-semibold text-slate-900 dark:text-white">Flexible plans</h3>
-            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">Choose the package that fits your rhythm and schedule.</p>
-          </div>
-          <div class="rounded-3xl bg-slate-100 p-6 dark:bg-slate-900">
-            <h3 class="text-xl font-semibold text-slate-900 dark:text-white">Guided care</h3>
-            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">Personalized support from instructors and wellness coaches.</p>
-          </div>
-        </div>
-      </section>
-    
-    </main>
-
-    <footer class="mt-24 border-t border-slate-200/80 bg-[var(--surface)] pt-16 pb-8 text-slate-600 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-300">
+# The footer for files in pages/
+pages_footer = """<footer class="mt-24 border-t border-slate-200/80 bg-[var(--surface)] pt-16 pb-8 text-slate-600 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-300">
       <div class="mx-auto max-w-7xl px-6 md:px-8">
 
         <!-- Footer Grid -->
@@ -190,7 +104,6 @@
             <h3 class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900 dark:text-white">Explore</h3>
             <ul class="mt-6 space-y-4 text-sm">
               <li><a href="../index.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Home</a></li>
-              <li><a href="home.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Niche Home </a></li>
               <li><a href="about.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Our Philosophy</a></li>
               <li><a href="services.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Wellness Programs</a></li>
               <li><a href="blog.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Mindfulness Blog</a></li>
@@ -230,9 +143,36 @@
           <p class="text-sm font-medium text-slate-400">Designed for mindful growth.</p>
         </div>
       </div>
-    </footer>
+    </footer>"""
 
-    <script src="../assets/js/site.js"></script>
-  </body>
-</html>
+root_header = pages_header.replace('href="../', 'href="./').replace('href="', 'href="pages/').replace('src="../', 'src="./').replace('href="pages/pages/', 'href="pages/')
+root_footer = pages_footer.replace('href="../', 'href="./').replace('href="', 'href="pages/').replace('src="../', 'src="./').replace('href="pages/pages/', 'href="pages/')
 
+header_pattern = re.compile(r'<header.*?</header>', re.DOTALL)
+footer_pattern = re.compile(r'<footer.*?</footer>', re.DOTALL)
+
+for root, dirs, files in os.walk(directory):
+    if "node_modules" in root or ".git" in root or "assets" in root or "src" in root:
+        continue
+    for file in files:
+        if file.endswith(".html") and file not in ["dashboard.html", "admin-dashboard.html"]:
+            path = os.path.join(root, file)
+            with open(path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Determine if in root or pages
+            in_root = root == directory
+            
+            new_content = content
+            
+            if in_root:
+                new_content = header_pattern.sub(root_header, new_content)
+                new_content = footer_pattern.sub(root_footer, new_content)
+            else:
+                new_content = header_pattern.sub(pages_header, new_content)
+                new_content = footer_pattern.sub(pages_footer, new_content)
+            
+            if new_content != content:
+                with open(path, 'w', encoding='utf-8') as f:
+                    f.write(new_content)
+                print(f"Updated {path}")

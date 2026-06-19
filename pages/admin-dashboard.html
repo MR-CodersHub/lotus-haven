@@ -1,105 +1,352 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Dashboard • Lotus Haven</title>
-     <link rel="icon" type="image/png" href="../assets/images/brand-logo.png">
+    <title>Admin Dashboard • Lotus</title>
+    <link rel="icon" type="image/png" href="../assets/images/brand-logo.png">
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
-  <body class="bg-[var(--bg)] text-[var(--text)]">
-     
-    <main class="mx-auto max-w-7xl px-6 py-12 md:px-8">
-      <section class="grid gap-10 lg:grid-cols-[0.9fr_0.5fr] lg:items-start">
+  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased font-sans flex h-screen overflow-hidden">
+    
+    <!-- Sidebar Navigation -->
+    <aside id="dashboard-sidebar" class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex-shrink-0 h-full shadow-2xl z-50 transition-transform duration-300 fixed inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 hidden md:flex flex-col">
+      <div class="h-20 flex items-center px-6 border-b border-slate-100 dark:border-slate-800 shrink-0">
+        <a href="../index.html" class="flex items-center gap-3 group">
+          <img src="../assets/images/brand-logo.png" alt="Lotus" class="h-8 w-8 group-hover:rotate-12 transition-transform duration-500">
+          <span class="text-logo text-sm font-bold uppercase tracking-widest text-primary-700 dark:text-primary-300">Lotus</span>
+        </a>
+      </div>
+      
+        <div class="flex-1 overflow-y-auto py-6 px-4 space-y-8">
         <div>
-          <p class="text-sm uppercase tracking-[0.35em] text-primary-700 dark:text-primary-200">Admin panel</p>
-          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-5xl">Studio dashboard for analytics, users, and bookings.</h1>
-          <p class="mt-6 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">This visual mockup highlights the administrative view for managing the studio, student activity, and membership insights.</p>
+          <p class="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Platform</p>
+          <nav class="space-y-1">
+            <a href="#" data-tab-target="tab-overview" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-medium transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              Overview
+            </a>
+            <a href="#" data-tab-target="tab-users" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200 font-medium transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Users
+            </a>
+            <a href="#" data-tab-target="tab-instructors" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200 font-medium transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              Instructors
+            </a>
+            <a href="#" data-tab-target="tab-classes" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200 font-medium transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+              Classes
+            </a>
+          </nav>
         </div>
-        <div class="rounded-[40px] border border-[var(--border)] bg-[var(--surface)] p-8 shadow-soft">
-          <p class="text-sm uppercase tracking-[0.35em] text-primary-700 dark:text-primary-200">Key metrics</p>
-          <ul class="mt-6 space-y-4 text-slate-600 dark:text-slate-300">
-            <li>• Weekly bookings: 92</li>
-            <li>• Active members: 320</li>
-            <li>• Messages pending: 12</li>
-          </ul>
-        </div>
-      </section>
+        
 
-      <section class="grid gap-8 xl:grid-cols-[0.75fr_0.45fr]">
-        <div class="rounded-[40px] border border-[var(--border)] bg-[var(--surface)] p-8 shadow-soft">
-          <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">Analytics overview</h2>
-          <div class="mt-8 grid gap-6 sm:grid-cols-2">
-            <div class="rounded-3xl bg-slate-100 p-6 dark:bg-slate-900">
-              <p class="text-sm uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">New signups</p>
-              <p class="mt-3 text-3xl font-semibold text-slate-900 dark:text-white">48</p>
-            </div>
-            <div class="rounded-3xl bg-slate-100 p-6 dark:bg-slate-900">
-              <p class="text-sm uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">Classes booked</p>
-              <p class="mt-3 text-3xl font-semibold text-slate-900 dark:text-white">142</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-[40px] border border-[var(--border)] bg-[var(--surface)] p-8 shadow-soft">
-          <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">Recent actions</h2>
-          <ul class="mt-6 space-y-4 text-slate-600 dark:text-slate-300">
-            <li>• Membership renewal completed</li>
-            <li>• New instructor added</li>
-            <li>• Private session confirmed</li>
-          </ul>
-        </div>
-      </section>
-    
-      <section class="mt-16 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <div>
-          <p class="text-sm uppercase tracking-[0.35em] text-primary-700 dark:text-primary-200">Studio spotlight</p>
-          <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white">Admin Dashboard with calm, modern design.</h2>
-          <p class="mt-4 text-base leading-8 text-slate-600 dark:text-slate-300">Use our guided classes, meditation tools, and studio resources to stay grounded while managing schedules, plans, and wellness progress.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <span class="rounded-full bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700">Live classes</span>
-            <span class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200">Private coaching</span>
-            <span class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200">Recorded sessions</span>
-          </div>
+          <p class="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Platform</p>
+          <nav class="space-y-1">
+            <a href="#" data-tab-target="tab-settings" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200 font-medium transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Profile Settings
+            </a>
+            <a href="../index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 font-medium transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+              Logout
+            </a>
+          </nav>
         </div>
-        <img src="https://images.unsplash.com/photo-1517832207067-4db24a2ae47c?auto=format&fit=crop&w=1200&q=80" alt="Calm yoga space" class="h-72 w-full rounded-[40px] object-cover shadow-soft" loading="lazy" />
-      </section>
-    
+      </div>
 
-      <section class="mt-16 rounded-[40px] border border-[var(--border)] bg-[var(--surface)] p-8 shadow-soft">
-        <div class="grid gap-8 lg:grid-cols-[0.9fr_0.55fr] lg:items-center">
-          <div>
-            <p class="text-sm uppercase tracking-[0.35em] text-primary-700 dark:text-primary-200">Benefits</p>
-            <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white">What makes Lotus Haven feel different?</h2>
-            <p class="mt-4 text-base leading-8 text-slate-600 dark:text-slate-300">Every experience is designed to support wellbeing, consistency, and calm progress.</p>
+      
+      <!-- Admin Profile Mini Snippet -->
+      <div class="p-4 border-t border-slate-800 shrink-0">
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition-colors cursor-pointer border border-slate-700">
+          <div class="h-10 w-10 rounded-full bg-primary-600 flex items-center justify-center text-white font-bold overflow-hidden border border-primary-500">
+            A
           </div>
-          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80" alt="Wellness service image" class="h-72 w-full rounded-[32px] object-cover shadow-soft" loading="lazy" />
-        </div>
-        <div class="mt-10 grid gap-4 sm:grid-cols-2">
-          <div class="rounded-3xl bg-slate-100 p-6 dark:bg-slate-900">
-            <h3 class="text-xl font-semibold text-slate-900 dark:text-white">Flexible plans</h3>
-            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">Choose the package that fits your rhythm and schedule.</p>
-          </div>
-          <div class="rounded-3xl bg-slate-100 p-6 dark:bg-slate-900">
-            <h3 class="text-xl font-semibold text-slate-900 dark:text-white">Guided care</h3>
-            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">Personalized support from instructors and wellness coaches.</p>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold text-white truncate">System Admin</p>
+            <p class="text-white truncate">Superuser</p>
           </div>
         </div>
-      </section>
-    
+      </div>
+    </aside>
 
-      <section class="mt-16 grid gap-10 lg:grid-cols-[0.7fr_0.9fr] lg:items-center">
-        <div class="rounded-[40px] bg-primary-50 p-8 shadow-soft dark:bg-slate-800">
-          <p class="text-sm uppercase tracking-[0.35em] text-primary-700 dark:text-primary-200">Community</p>
-          <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white">Join a calm community and stay motivated.</h2>
-          <p class="mt-4 text-base leading-8 text-slate-600 dark:text-slate-300">Members use studio classes, online resources, and a wellness dashboard to keep practice consistent.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="./contact.html" class="inline-flex rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100">Book a session</a>
+    <!-- Sidebar Backdrop for Mobile -->
+    <div id="sidebar-backdrop" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 hidden transition-opacity duration-300 opacity-0"></div>
+
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col min-w-0 overflow-hidden relative">
+      <!-- Top Header -->
+      <header class="h-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-6 z-10 sticky top-0 shrink-0">
+        <div class="flex items-center gap-4">
+          <button data-action="dashboard-menu-toggle" class="md:hidden text-slate-500 hover:text-slate-900 dark:hover:text-white z-50 relative">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <h1 class="text-xl font-semibold hidden sm:block">Dashboard Overview</h1>
+        </div>
+        <div class="flex items-center gap-4">
+          <button type="button" data-action="toggle-theme" class="h-10 w-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" aria-label="Toggle theme">
+            <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+          </button>
+          <a href="../index.html" class="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors">View Live Site &rarr;</a>
+        </div>
+      </header>
+
+      <!-- Main View -->
+      <main class="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 relative w-full">
+        <div id="tab-overview" class="dashboard-tab max-w-7xl mx-auto space-y-8">
+          
+          <!-- Top Stats -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div class="glass-card !p-5 sm:!p-6 !rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm">
+              <p class="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2">Total Registrations</p>
+              <div class="flex items-end gap-3">
+                <h3 class="text-3xl font-semibold">1,248</h3>
+                <span class="text-sm font-semibold text-emerald-600 mb-1 flex items-center"><svg class="w-4 h-4 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg> 12%</span>
+              </div>
             </div>
+            <div class="glass-card !p-5 sm:!p-6 !rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm">
+              <p class="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2">Active Memberships</p>
+              <div class="flex items-end gap-3">
+                <h3 class="text-3xl font-semibold">892</h3>
+                <span class="text-sm font-semibold text-emerald-600 mb-1 flex items-center"><svg class="w-4 h-4 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg> 8%</span>
+              </div>
+            </div>
+            <div class="glass-card !p-5 sm:!p-6 !rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm">
+              <p class="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2">Classes This Week</p>
+              <div class="flex items-end gap-3">
+                <h3 class="text-3xl font-semibold">45</h3>
+                <span class="text-sm font-semibold text-slate-400 mb-1">0%</span>
+              </div>
+            </div>
+            <div class="glass-card !p-5 sm:!p-6 !rounded-3xl border border-slate-200/60 dark:border-slate-800 shadow-sm">
+              <p class="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2">Total Bookings</p>
+              <div class="flex items-end gap-3">
+                <h3 class="text-3xl font-semibold">3,105</h3>
+                <span class="text-sm font-semibold text-emerald-600 mb-1 flex items-center"><svg class="w-4 h-4 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg> 24%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Section -->
+          <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Main Chart: Registrations over time -->
+            <div class="lg:col-span-2 glass-card !p-5 sm:!p-6 !rounded-3xl border border-slate-200/60 dark:border-slate-800">
+              <h3 class="text-lg font-semibold mb-6">User Registrations (Last 6 Months)</h3>
+              <!-- Custom CSS Bar Chart -->
+              <div class="h-64 flex items-end justify-between gap-2 px-2 relative">
+                <!-- Y-axis labels -->
+                <div class="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs text-slate-400 py-2">
+                  <span>300</span>
+                  <span>200</span>
+                  <span>100</span>
+                  <span>0</span>
+                </div>
+                <!-- Bars container -->
+                <div class="w-full h-full flex items-end justify-between gap-2 pl-8 pb-6 border-b border-slate-200 dark:border-slate-700">
+                  <div class="w-full bg-primary-200 dark:bg-primary-900/30 rounded-t-md relative group transition-all hover:bg-primary-300" style="height: 40%">
+                    <span class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-semibold bg-slate-800 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">120</span>
+                  </div>
+                  <div class="w-full bg-primary-200 dark:bg-primary-900/30 rounded-t-md relative group transition-all hover:bg-primary-300" style="height: 55%">
+                    <span class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-semibold bg-slate-800 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">165</span>
+                  </div>
+                  <div class="w-full bg-primary-400 dark:bg-primary-700 rounded-t-md relative group transition-all hover:bg-primary-500" style="height: 70%">
+                    <span class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-semibold bg-slate-800 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">210</span>
+                  </div>
+                  <div class="w-full bg-primary-300 dark:bg-primary-800 rounded-t-md relative group transition-all hover:bg-primary-400" style="height: 60%">
+                    <span class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-semibold bg-slate-800 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">180</span>
+                  </div>
+                  <div class="w-full bg-primary-500 dark:bg-primary-600 rounded-t-md relative group transition-all hover:bg-primary-600" style="height: 85%">
+                    <span class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-semibold bg-slate-800 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">255</span>
+                  </div>
+                  <div class="w-full bg-primary-600 dark:bg-primary-500 rounded-t-md relative group transition-all hover:bg-primary-700" style="height: 100%">
+                    <span class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-semibold bg-slate-800 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">300</span>
+                  </div>
+                </div>
+                <!-- X-axis labels -->
+                <div class="absolute bottom-0 left-8 right-0 flex justify-between text-xs font-medium text-slate-500">
+                  <span class="flex-1 text-center">Jan</span>
+                  <span class="flex-1 text-center">Feb</span>
+                  <span class="flex-1 text-center">Mar</span>
+                  <span class="flex-1 text-center">Apr</span>
+                  <span class="flex-1 text-center">May</span>
+                  <span class="flex-1 text-center text-primary-600 font-bold">Jun</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Secondary Chart: Class Participation -->
+            <div class="glass-card !p-5 sm:!p-6 !rounded-3xl border border-slate-200/60 dark:border-slate-800">
+              <h3 class="text-lg font-semibold mb-6">Class Participation</h3>
+              <div class="space-y-6">
+                <div>
+                  <div class="flex justify-between text-sm mb-2">
+                    <span class="font-medium text-slate-700 dark:text-slate-300">Vinyasa Flow</span>
+                    <span class="text-slate-500">45%</span>
+                  </div>
+                  <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-3">
+                    <div class="bg-primary-600 h-3 rounded-full" style="width: 45%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-2">
+                    <span class="font-medium text-slate-700 dark:text-slate-300">Restorative Yin</span>
+                    <span class="text-slate-500">30%</span>
+                  </div>
+                  <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-3">
+                    <div class="bg-primary-400 h-3 rounded-full" style="width: 30%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-2">
+                    <span class="font-medium text-slate-700 dark:text-slate-300">Meditation</span>
+                    <span class="text-slate-500">15%</span>
+                  </div>
+                  <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-3">
+                    <div class="bg-primary-300 h-3 rounded-full" style="width: 15%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-2">
+                    <span class="font-medium text-slate-700 dark:text-slate-300">Breathwork</span>
+                    <span class="text-slate-500">10%</span>
+                  </div>
+                  <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-3">
+                    <div class="bg-primary-200 h-3 rounded-full" style="width: 10%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Management Panels -->
+          <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Recent Bookings Table -->
+            <div class="glass-card !p-0 !rounded-3xl border border-slate-200/60 dark:border-slate-800 overflow-hidden">
+              <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                <h3 class="text-lg font-semibold">Recent Bookings</h3>
+                <a href="#" class="text-sm text-primary-600 font-medium hover:underline">View All</a>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm">
+                  <thead class="bg-slate-50 dark:bg-slate-900/50 text-slate-500">
+                    <tr>
+                      <th class="px-6 py-4 font-medium">User</th>
+                      <th class="px-6 py-4 font-medium">Class</th>
+                      <th class="px-6 py-4 font-medium">Date</th>
+                      <th class="px-6 py-4 font-medium">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                      <td class="px-6 py-4 font-medium text-slate-900 dark:text-white">Elena Vance</td>
+                      <td class="px-6 py-4 text-slate-600 dark:text-slate-300">Restorative Yin</td>
+                      <td class="px-6 py-4 text-slate-600 dark:text-slate-300">Today, 6:00 PM</td>
+                      <td class="px-6 py-4"><span class="px-2.5 py-1 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 rounded-full text-xs font-semibold">Confirmed</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                      <td class="px-6 py-4 font-medium text-slate-900 dark:text-white">Marcus Thorne</td>
+                      <td class="px-6 py-4 text-slate-600 dark:text-slate-300">Vinyasa Flow</td>
+                      <td class="px-6 py-4 text-slate-600 dark:text-slate-300">Tomorrow, 8:00 AM</td>
+                      <td class="px-6 py-4"><span class="px-2.5 py-1 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 rounded-full text-xs font-semibold">Confirmed</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                      <td class="px-6 py-4 font-medium text-slate-900 dark:text-white">Sophia Lee</td>
+                      <td class="px-6 py-4 text-slate-600 dark:text-slate-300">Meditation</td>
+                      <td class="px-6 py-4 text-slate-600 dark:text-slate-300">Jun 21, 9:30 AM</td>
+                      <td class="px-6 py-4"><span class="px-2.5 py-1 bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 rounded-full text-xs font-semibold">Pending</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Instructor Management -->
+            <div class="glass-card !p-0 !rounded-3xl border border-slate-200/60 dark:border-slate-800 overflow-hidden">
+              <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                <h3 class="text-lg font-semibold">Active Instructors</h3>
+                <button class="text-sm bg-primary-50 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400 px-3 py-1.5 rounded-lg font-medium hover:bg-primary-100 transition-colors">+ Add New</button>
+              </div>
+              <div class="p-6 space-y-6">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-4">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=150&q=80" alt="Sarah Jenkins" class="w-12 h-12 rounded-full object-cover border border-slate-200 dark:border-slate-700">
+                    <div>
+                      <h4 class="font-semibold text-slate-900 dark:text-white">Sarah Jenkins</h4>
+                      <p class="text-xs text-slate-500">Lead Vinyasa • 12 Classes/wk</p>
+                    </div>
+                  </div>
+                  <button class="text-slate-400 hover:text-primary-600 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                  </button>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-4">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="David Chen" class="w-12 h-12 rounded-full object-cover border border-slate-200 dark:border-slate-700">
+                    <div>
+                      <h4 class="font-semibold text-slate-900 dark:text-white">David Chen</h4>
+                      <p class="text-xs text-slate-500">Meditation • 8 Classes/wk</p>
+                    </div>
+                  </div>
+                  <button class="text-slate-400 hover:text-primary-600 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                  </button>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-4">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Maya Patel" class="w-12 h-12 rounded-full object-cover border border-slate-200 dark:border-slate-700">
+                    <div>
+                      <h4 class="font-semibold text-slate-900 dark:text-white">Maya Patel</h4>
+                      <p class="text-xs text-slate-500">Restorative • 10 Classes/wk</p>
+                    </div>
+                  </div>
+                  <button class="text-slate-400 hover:text-primary-600 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80" alt="Studio community image" class="h-72 w-full rounded-[40px] object-cover shadow-soft" loading="lazy" />
-      </section>
-    
-    </main>
+        
+        <!-- Users Tab (Hidden) -->
+        <div id="tab-users" class="dashboard-tab hidden max-w-7xl mx-auto space-y-8">
+          <h2 class="text-3xl font-semibold">User Management</h2>
+          <div class="p-8 rounded-2xl bg-white border border-slate-200 text-center">
+            <p class="text-slate-500">Search, edit, or remove user accounts here.</p>
+          </div>
+        </div>
+
+        <!-- Instructors Tab (Hidden) -->
+        <div id="tab-instructors" class="dashboard-tab hidden max-w-7xl mx-auto space-y-8">
+          <h2 class="text-3xl font-semibold">Instructor Management</h2>
+          <div class="p-8 rounded-2xl bg-white border border-slate-200 text-center">
+            <p class="text-slate-500">Manage instructor profiles and schedules.</p>
+          </div>
+        </div>
+
+        <!-- Classes Tab (Hidden) -->
+        <div id="tab-classes" class="dashboard-tab hidden max-w-7xl mx-auto space-y-8">
+          <h2 class="text-3xl font-semibold">Class Scheduling</h2>
+          <div class="p-8 rounded-2xl bg-white border border-slate-200 text-center">
+            <p class="text-slate-500">Create new class sessions and modify the timetable.</p>
+          </div>
+        </div>
+
+        <!-- Settings Tab (Hidden) -->
+        <div id="tab-settings" class="dashboard-tab hidden max-w-7xl mx-auto space-y-8">
+          <h2 class="text-3xl font-semibold">System Settings</h2>
+          <div class="p-8 rounded-2xl bg-white border border-slate-200 text-center">
+            <p class="text-slate-500">Configure global platform settings, API keys, and email templates.</p>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+
     <script src="../assets/js/site.js"></script>
   </body>
 </html>
